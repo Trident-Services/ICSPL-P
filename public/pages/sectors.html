@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sectors - ICSPL</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+      :root {
+        --primary: #3b82f6;
+        --dark: #111827;
+        --light: #f3f4f6;
+      }
+      
+      body {
+        background-color: var(--dark);
+        color: var(--light);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      /* Header animation */
+      header {
+        transition: all 0.3s ease;
+      }
+      
+      header.scrolled {
+        background-color: rgba(17, 24, 39, 0.95);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+      }
+      
+      /* Section title styling */
+      .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 3rem;
+      }
+      
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 3px;
+      }
+      
+      /* Sector card styling */
+      .sector-card {
+        background: linear-gradient(145deg, #1f2937, #111827);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .sector-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      }
+      
+      .sector-card h3 {
+        color: white;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .sector-card h3::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+      
+      .sector-card:hover h3::after {
+        width: 100%;
+      }
+      
+      .sector-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      
+      .sector-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #d1d5db;
+        transition: all 0.3s ease;
+      }
+      
+      .sector-list li::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+      }
+      
+      .sector-list li:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+      
+      /* Scroll reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+      
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Image carousel styles */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+      }
+      
+      .carousel-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .carousel-slide.active {
+        opacity: 1;
+      }
+      
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body class="scroll-smooth">
+    <!-- Header / Navigation -->
+    <header class="fixed w-full bg-black text-white z-50 shadow-md" id="main-header">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div><a href="/index.html">
+          <img src="/public/pages/images/Header--Transparent.png" alt="ICSPL Logo" class="h-20 object-contain" style="padding: 4px; border-radius: 4px;"/>
+        </a></div>
+        <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <nav class="hidden md:flex space-x-6 text-sm md:text-base">
+          <a href="/" class="hover:text-blue-400 transition-colors">Home</a>
+          <a href="/pages/about.html" class="hover:text-blue-400 transition-colors">About</a>
+          <a href="/pages/services.html" class="hover:text-blue-400 transition-colors">Services</a>
+          <a href="/pages/sectors.html" class="text-blue-400 font-medium">Sectors</a>
+          <a href="/pages/contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
+        </nav>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-black/95 backdrop-blur-sm">
+        <a href="/" class="block py-2 hover:text-blue-400 transition-colors">Home</a>
+        <a href="/pages/about.html" class="block py-2 hover:text-blue-400 transition-colors">About</a>
+        <a href="/pages/services.html" class="block py-2 hover:text-blue-400 transition-colors">Services</a>
+        <a href="/pages/sectors.html" class="block py-2 text-blue-400 font-medium">Sectors</a>
+        <a href="/pages/contact.html" class="block py-2 hover:text-blue-400 transition-colors">Contact</a>
+      </div>
+    </header>
+
+    <main class="pt-28 px-6 py-20 max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold mb-6 text-center section-title reveal">Our Sectors</h2>
+
+      <!-- Intelligent Transportation & Mobility -->
+      <div class="sector-card reveal">
+        <h3 class="text-2xl font-semibold">Intelligent Transportation & Mobility</h3>
+        <div class="carousel-container" id="transportation-carousel">
+          <div class="carousel-slide active">
+            <img src="https://img.freepik.com/premium-photo/concept-transportation-technology-intelligent-transport-systems-its-mobility-as-service_76964-61784.jpg" alt="Transportation System">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://assets.bizclikmedia.net/1800/8703d39a1202df2fa38f418757008edd:18bdfacbafed00c6369eba97b05b8a59/gettyimages-1300287214-1.jpg.jpg" alt="Smart Traffic">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://www.openaccessgovernment.org/wp-content/uploads/2021/06/dreamstime_xl_192386794-scaled.jpg" alt="Vehicle Detection">
+          </div>
+        </div>
+        <ul class="sector-list">
+          <li>ITS & Smart Parking</li>
+          <li>Tolling Solutions</li>
+          <li>Tunnel Automation</li>
+          <li>Smart Traffic Controls</li>
+          <li>Vehicle Detection Systems</li>
+          <li>Road Weather & Incident Detection</li>
+        </ul>
+      </div>
+
+      <!-- Smart City & IoT -->
+      <div class="sector-card reveal">
+        <h3 class="text-2xl font-semibold">Smart City & IoT</h3>
+        <div class="carousel-container" id="smartcity-carousel">
+          <div class="carousel-slide active">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart City">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cityscape">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1413&q=80" alt="Urban IoT">
+          </div>
+        </div>
+        <ul class="sector-list">
+          <li>Smart City Integration</li>
+          <li>IoT Deployments</li>
+          <li>V2X Communication</li>
+          <li>Static Weigh Stations</li>
+        </ul>
+      </div>
+
+      <!-- Defense & Security -->
+      <div class="sector-card reveal">
+        <h3 class="text-2xl font-semibold">Defense & Security</h3>
+        <div class="carousel-container" id="defense-carousel">
+          <div class="carousel-slide active">
+            <img src="https://images.unsplash.com/photo-1582408921715-18e7806365c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Defense Technology">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1584735422182-45196e8d9ba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security System">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Military Tech">
+          </div>
+        </div>
+        <ul class="sector-list">
+          <li>Military Technologies</li>
+          <li>Security Systems</li>
+        </ul>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-16 reveal">
+        <a href="/assets/contact.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+          Contact Us Today
+        </a>
+      </div>
+    </main>
+
+    <footer class="text-center p-8 bg-gray-900 text-white mt-20">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+          <div class="mb-6 md:mb-0">
+            <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="h-16 object-contain mx-auto md:mx-0" style="padding: 4px; border-radius: 4px;" />
+          </div>
+          <div class="flex space-x-6 mb-6 md:mb-0">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 3.807.058h.468c2.456 0 2.784-.011 3.807-.058.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-3.807v-.468c0-2.456-.011-2.784-.058-3.807-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <p>&copy; 2024 Intelligent Connect Solutions Pvt. Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+      
+      // Header scroll effect
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+      
+      // Scroll reveal animation
+      function scrollReveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        
+        reveals.forEach(reveal => {
+          const revealTop = reveal.getBoundingClientRect().top;
+          const revealPoint = 150;
+          
+          if (revealTop < window.innerHeight - revealPoint) {
+            reveal.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', scrollReveal);
+      
+      // Carousel functionality
+      function initCarousels() {
+        const carousels = [
+          { id: 'transportation-carousel', interval: 1000 },
+          { id: 'smartcity-carousel', interval: 1000 },
+          { id: 'defense-carousel', interval: 1000 }
+        ];
+        
+        carousels.forEach(carousel => {
+          const container = document.getElementById(carousel.id);
+          if (!container) return;
+          
+          const slides = container.querySelectorAll('.carousel-slide');
+          let currentSlide = 0;
+          let intervalId;
+          
+          function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+          }
+          
+          function startCarousel() {
+            intervalId = setInterval(showNextSlide, carousel.interval);
+          }
+          
+          // Start the carousel
+          startCarousel();
+          
+          // Pause on hover
+          container.addEventListener('mouseenter', () => {
+            clearInterval(intervalId);
+          });
+          
+          container.addEventListener('mouseleave', () => {
+            startCarousel();
+          });
+        });
+      }
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            const menu = document.getElementById("mobile-menu");
+            if (!menu.classList.contains('hidden')) {
+              menu.classList.add('hidden');
+            }
+          });
+        });
+        
+        // Initial scroll reveal check
+        scrollReveal();
+        
+        // Initialize carousels
+        initCarousels();
+      });
+    </script>
+  </body>
+</html>

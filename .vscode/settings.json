@@ -1,0 +1,20 @@
+{
+    "php.validate.executablePath": "C:\\Users\\gsais\\OneDrive\\Documents\\Desktop\\new\\php-8.4.10-Win32-vs17-x64\\php.exe",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MYSQL Local",
+            "database": "icspl",
+            "username": "root",
+            "password": "root",
+            "connectionTimeout": 30
+        }
+    ]
+}

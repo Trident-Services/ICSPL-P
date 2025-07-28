@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - ICSPL</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+    .logo {
+      height: 80px;
+      width: auto;
+      padding: 4px;
+      border-radius: 4px;
+    }
+    .footer-logo {
+      height: 30px;
+      width: auto;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    #mobile-menu {
+      transition: all 0.3s ease;
+    }
+    .scroll-box {
+      max-height: 150px;
+      overflow-y: auto;
+      background-color: #1f2937;
+      border: 1px solid #4b5563;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+    }
+    .scroll-box::-webkit-scrollbar {
+      width: 8px;
+    }
+    .scroll-box::-webkit-scrollbar-track {
+      background: #374151;
+    }
+    .scroll-box::-webkit-scrollbar-thumb {
+      background: #6b7280;
+      border-radius: 4px;
+    }
+  </style>
+  <script>
+      function toggleSubSectors(id) {
+    const sub = document.getElementById("sub-" + id);
+    if (sub) {
+      sub.classList.toggle("hidden");
+    }
+  }
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    function isValidEmail(email) {
+      const allowedDomains = [
+        'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'protonmail.com', 'icloud.com'
+      ];
+      const domain = email.substring(email.lastIndexOf("@") + 1).toLowerCase();
+      return allowedDomains.includes(domain);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Close mobile menu on link click
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          const menu = document.getElementById("mobile-menu");
+          if (!menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+          }
+        });
+      });
+
+      // Set current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Form submission validation
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        const emailInput = form.querySelector('input[name="gmail"]').value;
+        if (!isValidEmail(emailInput)) {
+          e.preventDefault();
+          alert("Please enter a valid email (e.g., gmail.com, yahoo.com, outlook.com).");
+          return;
+        }
+
+        const countryCode = document.getElementById("countryCode").value;
+        const phoneNumber = document.getElementById("phoneNumber").value.trim();
+        const fullPhone = countryCode + phoneNumber;
+
+        if (!/^\+\d{6,15}$/.test(fullPhone)) {
+          e.preventDefault();
+          alert("Please enter a valid phone number with 6 to 15 digits.");
+          return;
+        }
+
+        document.getElementById("fullPhone").value = fullPhone;
+      });
+    });
+  </script>
+</head>
+<body class="scroll-smooth">
+  <!-- Header / Navigation -->
+  <header class="fixed w-full bg-black text-white z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="/pages/images/Header--Transparent.png" alt="ICSPL Logo" class="logo mr-2">
+        </a>
+      </div>
+      <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav class="hidden md:flex space-x-6 text-sm md:text-base">
+        <a href="/" class="hover:text-gray-300">Home</a>
+        <a href="/pages/about.html" class="hover:text-gray-300">About</a>
+        <a href="/pages/services.html" class="hover:text-gray-300">Services</a>
+        <a href="/pages/sectors.html" class="hover:text-gray-300">Sectors</a>
+        <a href="/pages/contact.html" class="hover:text-gray-300">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-black">
+      <a href="/" class="block py-2 hover:bg-gray-900">Home</a>
+      <a href="/pages/about.html" class="block py-2 hover:bg-gray-900">About</a>
+      <a href="/pages/services.html" class="block py-2 hover:bg-gray-900">Services</a>
+      <a href="/pages/sectors.html" class="block py-2 hover:bg-gray-900">Sectors</a>
+      <a href="/pages/contact.html" class="block py-2 hover:bg-gray-900">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-28 px-6 py-20 bg-gray-900 max-w-7xl mx-auto">
+    <div class="bg-gray-800 p-8 rounded-lg">
+      <h2 class="text-4xl font-semibold mb-8 border-b border-gray-700 pb-3">Contact Us</h2>
+      <p class="mb-8 text-lg text-gray-300 max-w-3xl mx-auto">We'd love to hear from you! Fill out the form below or reach out through our contact details.</p>
+
+      <form class="max-w-xl mx-auto bg-gray-700 p-8 rounded-lg space-y-6" action="/submit" method="post">
+        <div>
+          <label class="block font-medium mb-2">Name</label>
+          <input type="text" name="name" class="w-full bg-gray-800 border border-gray-600 p-3 rounded-lg focus:outline-none focus:border-white" placeholder="Your Name" required />
+        </div>
+        <div>
+          <label class="block font-medium mb-2">Email</label>
+          <input type="email" name="gmail" class="w-full bg-gray-800 border border-gray-600 p-3 rounded-lg focus:outline-none focus:border-white" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <label class="block font-medium mb-2">Phone Number</label>
+          <div class="flex space-x-2">
+            <select id="countryCode" name="countryCode" class="bg-gray-800 border border-gray-600 p-3 rounded-lg w-1/3" required>
+              <option value="+91" selected>🇮🇳 +91 (India)</option>
+              <option value="+1">🇺🇸 +1 (USA)</option>
+              <option value="+44">🇬🇧 +44 (UK)</option>
+              <option value="+61">🇦🇺 +61 (Australia)</option>
+              <option value="+81">🇯🇵 +81 (Japan)</option>
+              <option value="+49">🇩🇪 +49 (Germany)</option>
+              <option value="+971">🇦🇪 +971 (UAE)</option>
+              <option value="+86">🇨🇳 +86 (China)</option>
+              <option value="+7">🇷🇺 +7 (Russia)</option>
+              <!-- Add more as needed -->
+            </select>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="\d{6,15}" class="bg-gray-800 border border-gray-600 p-3 rounded-lg w-2/3" placeholder="1234567890" required />
+          </div>
+        </div>
+
+        <input type="hidden" name="phone" id="fullPhone" />
+
+        <div>
+          <label class="block font-medium mb-2">Requirements</label>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-2">Services (Select one or more):</label>
+            <div class="scroll-box">
+              <div class="space-y-2">
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="IT Consulting" class="rounded">
+                  <span>IT Consulting</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="Software Development" class="rounded">
+                  <span>Software Development</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="Cloud Solutions" class="rounded">
+                  <span>Cloud Solutions</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="Cybersecurity" class="rounded">
+                  <span>Cybersecurity</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="Data Analytics" class="rounded">
+                  <span>Data Analytics</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="AI/ML Solutions" class="rounded">
+                  <span>AI/ML Solutions</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="IoT Development" class="rounded">
+                  <span>IoT Development</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                  <input type="checkbox" name="services[]" value="Blockchain Solutions" class="rounded">
+                  <span>Blockchain Solutions</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+<div class="mb-4">
+  <label class="block text-sm font-medium mb-2">Sectors (Select one or more):</label>
+  <div class="scroll-box space-y-2">
+
+    <!-- Sector 1 -->
+    <div>
+      <label class="flex items-center space-x-2 cursor-pointer" onclick="toggleSubSectors('its')">
+        <input type="checkbox" name="sectors[]" value="ITS and Smart Parking" class="rounded">
+        <span>Intelligent Transportation & Mobility</span>
+      </label>
+      <div id="sub-its" class="ml-6 mt-2 hidden space-y-1 text-sm text-gray-300">
+        <label class="block"><input type="checkbox" name="subsectors[]" value="ITS AND Smart Parking" class="mr-2">ITS AND Smart Parking</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Trolling solutions" class="mr-2">Trolling Solutions</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Tunnel Automation" class="mr-2">Tunnel Automation</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Smart Traffic Controls" class="mr-2">Smart Traffic Controls</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Vehicle Detection Systems" class="mr-2">Vehicle Detection Systems</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Road Weather & Incident Detection" class="mr-2">Road Weather & Incident Detection</label>
+      </div>
+    </div>
+
+    <!-- Sector 2 -->
+    <div>
+      <label class="flex items-center space-x-2 cursor-pointer" onclick="toggleSubSectors('toll')">
+        <input type="checkbox" name="sectors[]" value="Tolling Solutions" class="rounded">
+        <span>Smart City & IoT</span>
+      </label>
+      <div id="sub-toll" class="ml-6 mt-2 hidden space-y-1 text-sm text-gray-300">
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Smart City Integration" class="mr-2">Smart City Integration</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="IoT Deployments" class="mr-2">IoT Deployments</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="V2X Communication" class="mr-2">V2X Communication</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Static Weigh Stations" class="mr-2">Static Weigh Stations</label>
+      </div>
+    </div>
+
+    <!-- Repeat for other sectors similarly -->
+         <div>
+      <label class="flex items-center space-x-2 cursor-pointer" onclick="toggleSubSectors('toll')">
+        <input type="checkbox" name="sectors[]" value="Tolling Solutions" class="rounded">
+        <span>Defense & Security</span>
+      </label>
+      <div id="sub-toll" class="ml-6 mt-2 hidden space-y-1 text-sm text-gray-300">
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Military Technologies" class="mr-2">Military Technologies</label>
+        <label class="block"><input type="checkbox" name="subsectors[]" value="Security Systems" class="mr-2">Security Systems</label>
+      </div>
+    </div>
+    </div>
+    </div>
+
+          <label class="block text-sm font-medium mb-2">Additional Message:</label>
+          <textarea name="additional_message" class="w-full bg-gray-800 border border-gray-600 p-3 rounded-lg focus:outline-none focus:border-white" rows="3" placeholder="Any additional information..."></textarea>
+        </div>
+
+        <button type="submit" class="bg-white text-black px-8 py-3 rounded-lg hover:bg-gray-200">Send Message</button>
+      </form>
+
+      <div class="mt-12 text-center text-gray-300 space-y-2">
+        <p><strong>Address:</strong> Intelligent Connect Solutions Pvt. Ltd., Kurnool, Andhra Pradesh – 518001, India</p>
+        <p><strong>Email:</strong> info@icspl.com</p>
+        <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="#" class="text-blue-400 hover:text-blue-300">LinkedIn</a>
+          <a href="#" class="text-blue-300 hover:text-blue-200">Twitter</a>
+          <a href="#" class="text-blue-500 hover:text-blue-400">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="p-8 bg-black text-white mt-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 md:mb-0">
+        <img src="/pages/images/Header--Transparent.png" alt="ICSPL Logo" class="footer-logo mr-3">
+      </div>
+      <div class="text-gray-400">
+        &copy; <span id="year"></span> All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

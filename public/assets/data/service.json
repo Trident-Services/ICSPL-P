@@ -1,0 +1,148 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "category": "Engineering & Consultancy",
+      "description": "Engineering and consultancy services involve providing expert advice and technical solutions for complex engineering challenges. This includes feasibility studies, project planning, system optimization, risk analysis, and regulatory compliance. These services are tailored to help organizations improve operational efficiency, reduce costs, and enhance innovation across infrastructure, manufacturing, energy, and technology sectors.",
+      "image": "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "Technical feasibility assessments",
+        "Regulatory and compliance support",
+        "Process optimization and automation strategy",
+        "Project lifecycle consulting"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "System Integration & Deployment",
+      "description": "System integration focuses on connecting different subsystems into one cohesive, functional system. This includes hardware, software, network, and storage integration. Deployment refers to the configuration and implementation of these systems into live environments, ensuring they meet performance, security, and reliability standards.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "Integration of legacy systems with modern platforms",
+        "Hardware and software deployment",
+        "IoT and edge device configuration",
+        "Enterprise-level infrastructure rollout"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Engineering Design & Advisory",
+      "description": "This service includes the creation of detailed engineering drawings, system blueprints, and design documentation, along with expert advisory for system planning and execution. It supports both greenfield and brownfield projects across various industries.",
+      "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "2D/3D CAD design and modeling",
+        "Product and system prototyping",
+        "Design validation and compliance",
+        "Value engineering and cost reduction strategies"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Research & Development (R&D)",
+      "description": "R&D services are centered on innovation, new technology development, and the refinement of existing products and systems. These services drive advancements in materials, processes, and digital technologies, supporting competitive advantage and industry leadership.",
+      "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "New product development (NPD)",
+        "Technology scouting and feasibility research",
+        "Prototype development and testing",
+        "Intellectual property and patent support"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Data & Digital Systems",
+      "description": "This involves the development and implementation of digital platforms that manage, process, and interpret data. It spans data infrastructure, cloud solutions, custom software, and automation systems that support data-driven decision-making.",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "Custom software and application development",
+        "Cloud infrastructure and data warehousing",
+        "Data visualization and business intelligence systems",
+        "API development and system automation"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Data Cleaning & Analysis",
+      "description": "These services aim to ensure data integrity and usability. Data cleaning involves identifying and rectifying errors or inconsistencies, while analysis helps extract meaningful insights to support strategic decisions.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "Data validation, deduplication, and transformation",
+        "Statistical and predictive analysis",
+        "Trend identification and performance analytics",
+        "Data enrichment and formatting"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "Report & Dashboard Generation",
+      "description": "Focused on the creation of dynamic, real-time reports and dashboards, these services help organizations monitor KPIs, operational performance, and strategic metrics via visual and interactive formats.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "Custom dashboard design using tools like Power BI, Tableau",
+        "Automated report generation",
+        "Real-time data streaming and monitoring",
+        "Executive summaries and performance insights"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "Data Centre Design & Implementation",
+      "description": "This includes the planning, design, and deployment of data centers that ensure high availability, scalability, and security. Services cover both on-premise and cloud-integrated data center environments.",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "Site analysis and infrastructure planning",
+        "Power, cooling, and cabling design",
+        "Virtualization and storage solutions",
+        "Redundancy and disaster recovery planning"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "Security & Defense",
+      "description": "Security and defense services focus on providing technology-based solutions for both physical and cyber threats. This involves secure communication systems, surveillance, threat detection, and secure systems integration.",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "keyOfferings": [
+        "Perimeter and cyber security systems",
+        "Threat detection and access control",
+        "Defense-grade communication systems",
+        "Security policy development and audits"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "Military Trainers & Wire Harness Systems",
+      "description": "This service includes the development of simulators and trainers for military personnel, and the design and manufacture of wire harness systems used in defense vehicles, aircraft, and equipment.",
+      "image": "https://wallpapercave.com/wp/wp4869444.jpg",
+      "keyOfferings": [
+        "Virtual and augmented reality training systems",
+        "Weapon system simulators",
+        "Custom wire harness prototyping and testing",
+        "Mil-spec component sourcing and assembly"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "Test Jigs & Reverse Engineering",
+      "description": "Test jigs are used for quality assurance and testing of hardware/electronics, while reverse engineering involves analyzing existing products to replicate or improve them without original design data.",
+      "image": "https://mc-68095c24-9d47-44d2-a4ee-620361-cdn-endpoint.azureedge.net/-/media/images/sectors/connected-technologies/pcb-meta.jpg?rev=06f78711a58c43788547051d8d26cd25",
+      "keyOfferings": [
+        "Design and fabrication of functional test jigs",
+        "Circuit and PCB analysis",
+        "3D scanning and modeling of mechanical parts",
+        "Obsolescence management and part redesign"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "Advanced CCTV & Surveillance Systems",
+      "description": "These systems enhance safety and monitoring using state-of-the-art technologies such as AI-based analytics, facial recognition, and remote management tools.",
+      "image": "https://hdhtech.com/wp-content/uploads/2019/07/19.2.jpg",
+      "keyOfferings": [
+        "IP and thermal camera deployment",
+        "AI-based event detection and video analytics",
+        "Centralized monitoring systems (VMS)",
+        "Smart access and perimeter intrusion systems"
+      ]
+    }
+  ]
+}

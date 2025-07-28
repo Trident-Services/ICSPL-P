@@ -1,0 +1,189 @@
+      /* Custom styles for the black theme */
+      :root {
+        --primary-blue: #3B82F6;
+        --dark-bg: #0a0a0a;
+        --content-bg: rgba(20, 20, 20, 0.9);
+        --card-bg: rgba(30, 30, 30, 0.8);
+        --text-primary: #ffffff;
+        --text-secondary: #d1d5db;
+        --text-tertiary: #9ca3af;
+        --border-color: #333333;
+      }
+      
+      body {
+        background-color: var(--dark-bg);
+        color: var(--text-primary);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+      }
+      
+      .logo {
+        height: 80px;
+        width: auto;
+        padding: 4px;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+      }
+      
+      .logo:hover {
+        transform: scale(1.05);
+      }
+      
+      .footer-logo {
+        height: 30px;
+        width: auto;
+        padding: 2px;
+        border-radius: 2px;
+        opacity: 0.9;
+      }
+      
+      #mobile-menu {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        max-height: 0;
+        overflow: hidden;
+      }
+      
+      #mobile-menu.show {
+        max-height: 500px;
+      }
+      
+      .content-box {
+        background-color: var(--content-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+      }
+      
+      .nav-link {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      
+      .nav-link:hover {
+        color: var(--text-primary);
+      }
+      
+      .nav-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--primary-blue);
+        transition: width 0.3s ease;
+      }
+      
+      .nav-link:hover:after {
+        width: 100%;
+      }
+      
+      .header-shadow {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Service card styles */
+      .service-card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+      }
+      
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-color: var(--primary-blue);
+      }
+      
+      .service-card img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .service-content h3 {
+        color: white;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+      
+      .service-content p {
+        color: var(--text-tertiary);
+        margin-bottom: 1rem;
+      }
+      
+      .key-offerings {
+        margin-top: 1rem;
+      }
+      
+      .key-offerings li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary);
+      }
+      
+      .key-offerings li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary-blue);
+        font-weight: bold;
+      }
+      
+      /* Slider Styles */
+      .glider-contain {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+      
+      .glider {
+        margin: 0 auto;
+        position: relative;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        transform: translateZ(0);
+      }
+      
+      .glider-slide {
+        min-width: 150px;
+      }
+      
+      .glider-next, .glider-prev {
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        opacity: 1;
+        transition: opacity 0.5s cubic-bezier(.17,.67,.83,.67);
+      }
+      
+      .glider-dots {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+      }
+      
+      .glider-dots button {
+        background-color: #374151;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border-radius: 50%;
+        margin: 0 5px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .glider-dots button.active {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+      }
