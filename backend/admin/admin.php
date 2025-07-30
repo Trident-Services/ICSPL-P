@@ -2,7 +2,7 @@
 session_start();
 
 // Auto logout logic
-$timeout_duration = 1200; //20 minutes
+$timeout_duration = 1200; // 20 minutes
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
     session_unset();
     session_destroy();
@@ -212,7 +212,7 @@ $result_logs = $conn->query($sql_logs);
         <a href="/admin">Dashboard</a>
         <a href="/upload">Upload Files</a>
         <a href="/users">User List</a>
-        <a href="/admin-users">Admin Users</a> <!-- ✅ Added Admin Users link -->
+        <a href="/admin-users">Admin Users</a>
         <a href="?logout=true" class="logout-btn">Logout</a>
     </nav>
 </div>
@@ -222,7 +222,7 @@ $result_logs = $conn->query($sql_logs);
     <input type="text" id="searchInput" placeholder="Search email or name...">
 </div>
 <div class="table-container">
-    <table>
+    <table class="submission-table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -290,7 +290,7 @@ $result_logs = $conn->query($sql_logs);
 <script>
     document.getElementById("searchInput").addEventListener("keyup", function () {
         const filter = this.value.toLowerCase();
-        const rows = document.querySelectorAll("table tbody tr");
+        const rows = document.querySelectorAll(".submission-table tbody tr");
 
         rows.forEach(row => {
             const name = row.cells[1]?.textContent.toLowerCase() || "";

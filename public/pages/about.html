@@ -7,7 +7,43 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      /* Custom CSS */
+         body {
+      background-color: #000;
+      color: #fff;
+    }
+    .logo {
+      height: 80px;
+      width: auto;
+      padding: 4px;
+      border-radius: 4px;
+    }
+    .footer-logo {
+      height: 30px;
+      width: auto;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    #mobile-menu {
+      transition: all 0.3s ease;
+    }
+    .scroll-box {
+      max-height: 150px;
+      overflow-y: auto;
+      background-color: #1f2937;
+      border: 1px solid #4b5563;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+    }
+    .scroll-box::-webkit-scrollbar {
+      width: 8px;
+    }
+    .scroll-box::-webkit-scrollbar-track {
+      background: #374151;
+    }
+    .scroll-box::-webkit-scrollbar-thumb {
+      background: #6b7280;
+      border-radius: 4px;
+    }
       :root {
         --primary-blue: #3B82F6;
         --dark-bg: #0a0a0a;
@@ -18,366 +54,188 @@
         --text-tertiary: #9ca3af;
         --border-color: #333333;
       }
-      
       body {
         background-color: var(--dark-bg);
         color: var(--text-primary);
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Inter', sans-serif;
         line-height: 1.6;
       }
-      
-      .logo {
-        height: 80px;
-        width: auto;
-        padding: 4px;
-        border-radius: 4px;
-        transition: transform 0.3s ease;
-      }
-      
-      .logo:hover {
-        transform: scale(1.05);
-      }
-      
-      .footer-logo {
-        height: 30px;
-        width: auto;
-        padding: 2px;
-        border-radius: 2px;
-        opacity: 0.9;
-      }
-      
-      #mobile-menu {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        max-height: 0;
-        overflow: hidden;
-      }
-      
-      #mobile-menu.show {
-        max-height: 500px;
-      }
-      
-      .content-box {
-        background-color: var(--content-bg);
-        border: 1px solid var(--border-color);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(8px);
-      }
-      
-      .nav-link {
-        transition: all 0.3s ease;
-        position: relative;
-      }
-      
-      .nav-link:hover {
-        color: var(--text-primary);
-      }
-      
-      .nav-link:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        left: 0;
-        background-color: var(--primary-blue);
-        transition: width 0.3s ease;
-      }
-      
-      .nav-link:hover:after {
-        width: 100%;
-      }
-      
-      .header-shadow {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      }
-      
-      .mission-vision-box {
-        background-color: var(--card-bg);
-        border-left: 4px solid var(--primary-blue);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      
-      .mission-vision-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      }
-      
-      .about-section {
-        margin-bottom: 2rem;
-      }
-      
-      blockquote {
-        border-left: 4px solid var(--primary-blue);
-        padding-left: 1.5rem;
-        font-style: italic;
-        color: var(--text-secondary);
-      }
-      
-      .bullet-point {
-        color: var(--primary-blue);
-        margin-right: 0.5rem;
-      }
-      
-      .fade-in {
-        animation: fadeIn 0.8s ease-in-out;
-      }
-      
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      
       .section-divider {
         border: 0;
         height: 1px;
-        background-image: linear-gradient(to right, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.75), rgba(59, 130, 246, 0));
+        background-image: linear-gradient(to right, rgba(59,130,246,0), rgba(59,130,246,0.75), rgba(59,130,246,0));
         margin: 2rem 0;
       }
-      
-      .highlight-text {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .highlight-text:after {
-        content: '';
-        position: absolute;
+      .card-image {
         width: 100%;
-        height: 30%;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(59, 130, 246, 0.3);
-        z-index: -1;
-        transition: height 0.3s ease;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #444;
       }
-      
-      .highlight-text:hover:after {
-        height: 50%;
+      .highlight {
+        background-color: rgba(59, 130, 246, 0.2);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+      .content-box {
+        background-color: var(--content-bg);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+      }
+      .team-card {
+        background-color: rgba(40, 40, 40, 0.9);
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--border-color);
+      }
+      .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      }
+      .team-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 9999px;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 2px solid var(--primary-blue);
       }
     </style>
   </head>
-  <body class="scroll-smooth">
+  <body>
     <!-- Header / Navigation -->
-    <header class="fixed w-full bg-black text-white z-50 header-shadow">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center">
-          <a href="/">
-            <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="logo mr-2">
-          </a>
-        </div>
-        <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-        <nav class="hidden md:flex space-x-6 text-sm md:text-base">
-          <a href="/" class="nav-link text-gray-300">Home</a>
-          <a href="/pages/about.html" class="nav-link text-white font-medium">About</a>
-          <a href="/pages/services.html" class="nav-link text-gray-300">Services</a>
-          <a href="/pages/sectors.html" class="nav-link text-gray-300">Sectors</a>
-          <a href="/pages/sectors.html" class="nav-link text-gray-300">Contact</a>
-        </nav>
+  <header class="fixed w-full bg-black text-white z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="logo mr-2">
+        </a>
       </div>
-      <div id="mobile-menu" class="md:hidden px-4 bg-gray-900">
-        <a href="/" class="block py-3 border-b border-gray-800 text-gray-300 hover:text-white">Home</a>
-        <a href="/pages/about.html" class="block py-3 border-b border-gray-800 text-white font-medium">About</a>
-        <a href="/pages/services.html" class="block py-3 border-b border-gray-800 text-gray-300 hover:text-white">Services</a>
-        <a href="/pages/sectors.html" class="block py-3 border-b border-gray-800 text-gray-300 hover:text-white">Sectors</a>
-        <a href="/pages/contact.html" class="block py-3 text-gray-300 hover:text-white">Contact</a>
-      </div>
-    </header>
-
+      <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav class="hidden md:flex space-x-6 text-sm md:text-base">
+        <a href="/" class="hover:text-gray-300">Home</a>
+        <a href="/pages/about.html" class="hover:text-gray-300">About</a>
+        <a href="/pages/services.html" class="hover:text-gray-300">Services</a>
+        <a href="/pages/sectors.html" class="hover:text-gray-300">Sectors</a>
+        <a href="/pages/contact.html" class="hover:text-gray-300">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-black">
+      <a href="/" class="block py-2 hover:bg-gray-900">Home</a>
+      <a href="/pages/about.html" class="block py-2 hover:bg-gray-900">About</a>
+      <a href="/pages/services.html" class="block py-2 hover:bg-gray-900">Services</a>
+      <a href="/pages/sectors.html" class="block py-2 hover:bg-gray-900">Sectors</a>
+      <a href="/pages/contact.html" class="block py-2 hover:bg-gray-900">Contact</a>
+    </div>
+  </header>
     <main class="pt-28 px-4 py-16 max-w-7xl mx-auto">
-      <div class="content-box p-6 md:p-10 rounded-lg fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">About Us</h2>
-        
-        <div class="about-section mb-10">
-          <p class="text-lg text-gray-300 leading-relaxed mb-6">
-            <strong class="highlight-text">Intelligent Connect Solutions Private Limited (ICSPL)</strong> is a technology-driven company dedicated to shaping the future of smart infrastructure, transportation, and automation through innovative, reliable, and scalable solutions. Founded with a vision to bridge the gap between intelligent technologies and real-world challenges, ICSPL is at the forefront of delivering advanced systems that drive efficiency, safety, and sustainability.
-          </p>
-          
-          <p class="text-lg text-gray-300 leading-relaxed mb-6">
-            At ICSPL, we specialize in designing and deploying <strong class="highlight-text">integrated solutions</strong> that serve both public and private sector clients across various industries. Our portfolio includes a wide range of services and technologies such as:
-          </p>
-          
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <li class="flex items-start">
-              <span class="bullet-point">•</span>
-              <span class="text-gray-300">Intelligent Transportation Systems (ITS)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="bullet-point">•</span>
-              <span class="text-gray-300">Smart Traffic Management and Control</span>
-            </li>
-            <li class="flex items-start">
-              <span class="bullet-point">•</span>
-              <span class="text-gray-300">IoT-based Automation and Monitoring</span>
-            </li>
-            <li class="flex items-start">
-              <span class="bullet-point">•</span>
-              <span class="text-gray-300">Urban Mobility and Smart City Solutions</span>
-            </li>
-            <li class="flex items-start">
-              <span class="bullet-point">•</span>
-              <span class="text-gray-300">AI-driven Data Analytics for Infrastructure</span>
-            </li>
-            <li class="flex items-start">
-              <span class="bullet-point">•</span>
-              <span class="text-gray-300">Surveillance, Communication, and Control Systems</span>
-            </li>
-          </ul>
-          
-          <p class="text-lg text-gray-300 leading-relaxed mb-6">
-            What sets us apart is our <strong class="highlight-text">customer-centric approach</strong> and our commitment to excellence at every stage—from design and development to implementation and support. We work closely with our clients to understand their unique challenges and craft custom solutions that not only meet but exceed their expectations.
-          </p>
-          
-          <p class="text-lg text-gray-300 leading-relaxed">
-            We are a team of engineers, data scientists, software developers, and infrastructure specialists who believe in the power of <strong class="highlight-text">technology to transform lives</strong>. Every solution we build is aligned with our core principles of <strong class="highlight-text">innovation, sustainability, interoperability, and scalability</strong>.
-          </p>
-          
-          <p class="text-lg text-gray-300 leading-relaxed mt-6">
-            ICSPL is not just a solutions provider—we are a technology partner in your journey toward smarter infrastructure, intelligent mobility, and connected environments.
-          </p>
+      <!-- Company Overview Section -->
+      <section class="mb-20">
+        <h1 class="text-4xl font-bold text-center mb-4 text-white">Welcome to <span class="highlight">ICSPL</span></h1>
+        <p class="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-4">
+          <span class="highlight">Intelligent Connect Solutions Pvt. Ltd. (ICSPL)</span> is a forward-thinking technology company dedicated to transforming urban environments through smart, connected solutions. We specialise in integrating IoT, Artificial Intelligence, and Intelligent Transportation Systems (ITS) to enhance city infrastructure, safety, and efficiency.
+        </p>
+        <p class="text-center text-base text-gray-400 max-w-4xl mx-auto mb-8">
+          Our mission is to empower governments and enterprises to make data-driven decisions using intelligent systems and real-time analytics. From AI-powered traffic control and surveillance to fully integrated IoT networks and smart energy systems, ICSPL is building the foundation of smarter, more sustainable cities.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="content-box">
+            <img src="/assets/images/smartcity.jpg" alt="Smart City" class="card-image">
+            <h4 class="text-xl text-white font-semibold mb-2">Smart City Integration</h4>
+            <p class="text-gray-400 text-sm">Integrated ITS, AI-driven analytics, and mobility solutions powering future-ready cities.</p>
+          </div>
+          <div class="content-box">
+            <img src="/assets/images/traffic management.jpg" alt="Traffic Control" class="card-image">
+            <h4 class="text-xl text-white font-semibold mb-2">Traffic Management</h4>
+            <p class="text-gray-400 text-sm">Real-time traffic control, emergency response, and optimized infrastructure flow.</p>
+          </div>
+          <div class="content-box">
+            <img src="/assets/images/iot.jpg" alt="IoT Monitoring" class="card-image">
+            <h4 class="text-xl text-white font-semibold mb-2">IoT Monitoring</h4>
+            <p class="text-gray-400 text-sm">Automated real-time monitoring and analytics of smart devices and urban infrastructure.</p>
+          </div>
         </div>
-        
+      </section>
+
+      <!-- Partner Companies Section -->
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-center mb-8 text-white">Our <span class="highlight">Trusted Partners</span></h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="content-box">
+            <img src="/assets/images/trident-1-logo.png" alt="UrbanTech AI" class="card-image">
+            <h3 class="text-2xl text-white font-semibold mb-2">Trident-Co</h3>
+            <p class="text-gray-400 text-sm">Collaborating with ICSPL to develop scalable AI frameworks for city-wide smart grids and intelligent sensors.</p>
+          </div>
+          <div class="content-box">
+            <img src="/assets/images/partner2.jpg" alt="SecureNet Solutions" class="card-image">
+            <h3 class="text-2xl text-white font-semibold mb-2">SecureNet Solutions</h3>
+            <p class="text-gray-400 text-sm">Providing secure and encrypted infrastructure for data-driven transport and surveillance systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Developer Team Section -->
+      <section class="mt-20">
         <hr class="section-divider">
-        
-        <div class="grid md:grid-cols-2 gap-8 mt-10">
-          <div class="mission-vision-box p-6 rounded-lg fade-in" style="animation-delay: 0.1s;">
-            <h3 class="text-2xl font-bold mb-6 text-white">Our Mission</h3>
-            <blockquote class="text-lg mb-4">
-              "Deliver intelligent, future-ready solutions that connect systems, cities, and people—empowering industries, enhancing infrastructure, and improving lives through smart, sustainable technology."
-            </blockquote>
-            <p class="text-gray-300 mb-4">
-              We aim to be a catalyst for positive change by:
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Bridging the gap between operational challenges and digital solutions.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Empowering decision-makers with actionable data through intelligent systems.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Enabling safe, efficient, and optimized transportation and automation networks.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Building long-term partnerships grounded in trust, innovation, and shared growth.</span>
-              </li>
-            </ul>
-            <p class="text-gray-300 mt-4">
-              We are committed to leveraging the latest advancements in AI, IoT, cloud computing, and automation to create solutions that are <strong class="highlight-text">reliable, adaptive, and impactful</strong>.
-            </p>
+        <h3 class="text-3xl font-bold mb-8 text-white text-center">Meet Our <span class="highlight">Developers</span></h3>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="/assets/images/dev-1.jpg" alt="Developer 1" class="team-photo">
+           <h4 class="text-lg font-semibold text-white">
+            <a href="https://www.linkedin.com/in/sai-sreekar-reddy-108753250" target="_blank" class="text-blue-400 hover:underline">
+            G Sai Sreekar Reddy
+            </a>
+          </h4>
+            <p class="text-sm text-gray-400">Lead Software Engineer And cloud Engineer</p>
           </div>
-          
-          <div class="mission-vision-box p-6 rounded-lg fade-in" style="animation-delay: 0.2s;">
-            <h3 class="text-2xl font-bold mb-6 text-white">Our Vision</h3>
-            <blockquote class="text-lg mb-4">
-              "To be a global pioneer in intelligent infrastructure and connectivity solutions—shaping the future of smart cities, connected mobility, and sustainable urban development."
-            </blockquote>
-            <p class="text-gray-300 mb-4">
-              Our vision is rooted in our belief that technology should not only serve current needs but also anticipate future challenges. As we move toward an increasingly connected world, ICSPL aspires to lead the transformation by:
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Creating seamless interactions between humans, machines, and data.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Supporting governments and enterprises in building smarter, safer, and more resilient systems.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Driving innovation that contributes to environmental sustainability and social advancement.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="bullet-point">•</span>
-                <span class="text-gray-300">Becoming a trusted technology partner across the globe.</span>
-              </li>
-            </ul>
-            <p class="text-gray-300 mt-4">
-              We envision a world where <strong class="highlight-text">intelligent connectivity</strong> becomes the backbone of urban living, where infrastructure and technology work hand in hand to build thriving, inclusive, and future-ready communities.
-            </p>
+          <div class="team-card">
+            <img src="/assets/images/dev-1.jpg" alt="Developer 2" class="team-photo">
+            <h4 class="text-lg font-semibold text-white">
+            <a href="https:www.google.com" target="_blank" class="text-blue-400 hover:underline">
+              Bhashar Syed
+            </a>
+          </h4>
+            <p class="text-sm text-gray-400">Developer</p>
           </div>
-        </div>
-      </div>
+          <!--<div class="team-card">
+            <img src="/assets/images/dev3.jpg" alt="Developer 3" class="team-photo">
+            <h4 class="text-lg font-semibold text-white">Kiran Das</h4>
+            <p class="text-sm text-gray-400">Full Stack Developer</p>
+          </div>
+          <div class="team-card">
+            <img src="/assets/images/dev4.jpg" alt="Developer 4" class="team-photo">
+            <h4 class="text-lg font-semibold text-white">Anjali Mehta</h4>
+            <p class="text-sm text-gray-400">Data Scientist</p>
+          </div>
+        </div> -->
+      </section>
+
     </main>
-
-    <footer class="p-8 bg-black text-white mt-20 border-t border-gray-900">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div class="flex items-center mb-4 md:mb-0">
-          <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="footer-logo mr-3">
-          <div>
-            <!-- <div class="text-lg font-bold text-gray-100">ICSPL</div>
-            <div class="text-sm text-gray-500">Intelligent Connect Solutions Pvt. Ltd.</div> -->
-          </div>
-        </div>
-        <div class="text-gray-500 text-sm">
-          &copy; <span id="year"></span> All rights reserved.
-        </div>
+     <footer class="p-8 bg-black text-white mt-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 md:mb-0">
+        <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="footer-logo mr-3">
       </div>
-    </footer>
-
-    <script>
-      // Toggle mobile menu
-      function toggleMenu() {
-        const menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("show");
-      }
-      
-      document.addEventListener("DOMContentLoaded", () => {
-        // Close mobile menu when link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-          link.addEventListener('click', () => {
-            const menu = document.getElementById("mobile-menu");
-            menu.classList.remove("show");
-          });
-        });
-        
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Add scroll effect to header
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 10) {
-            header.classList.add('header-shadow');
-            header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
-            header.style.backdropFilter = 'blur(8px)';
-          } else {
-            header.classList.remove('header-shadow');
-            header.style.backgroundColor = '#000';
-            header.style.backdropFilter = 'none';
-          }
-        });
-        
-        // Intersection Observer for scroll animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = 1;
-              entry.target.style.transform = 'translateY(0)';
-            }
-          });
-        }, observerOptions);
-        
-        fadeElements.forEach(element => {
-          element.style.opacity = 0;
-          element.style.transform = 'translateY(20px)';
-          observer.observe(element);
-        });
-      });
-    </script>
+      <div class="text-gray-400">
+        &copy; <span id="year"></span> All rights reserved.
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

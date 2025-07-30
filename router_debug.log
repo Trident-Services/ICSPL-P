@@ -4467,3 +4467,1075 @@
 [2025-07-28 11:41:12] Processing URI: '/login'
 [2025-07-28 11:41:12] Attempting to load: C:\Users\gsais\Downloads\ICSPL-P/backend/auth/login.php
 [2025-07-28 11:41:12] File found - including: C:\Users\gsais\Downloads\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:19:23] === NEW REQUEST ===
+[2025-07-30 11:19:23] REQUEST_URI: /
+[2025-07-30 11:19:23] Processing URI: '/'
+[2025-07-30 11:19:23] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 11:19:23] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 11:19:23] === NEW REQUEST ===
+[2025-07-30 11:19:23] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 11:19:23] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 11:19:23] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 11:19:23] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 11:19:23] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 11:19:23] === NEW REQUEST ===
+[2025-07-30 11:19:23] REQUEST_URI: /assets/css/Home.css?v=1.1
+[2025-07-30 11:19:23] Processing URI: '/assets/css/Home.css'
+[2025-07-30 11:19:23] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/css/Home.css
+[2025-07-30 11:19:23] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 11:19:23] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 11:19:23] === NEW REQUEST ===
+[2025-07-30 11:19:23] REQUEST_URI: /assets/js/Home.js?v=1.1
+[2025-07-30 11:19:23] Processing URI: '/assets/js/Home.js'
+[2025-07-30 11:19:23] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/js/Home.js
+[2025-07-30 11:19:23] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 11:19:23] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 11:19:23] === NEW REQUEST ===
+[2025-07-30 11:19:23] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 11:19:23] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 11:19:23] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 11:19:23] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 11:19:23] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 11:19:23] === NEW REQUEST ===
+[2025-07-30 11:19:23] REQUEST_URI: /favicon-32x32.png
+[2025-07-30 11:19:23] Processing URI: '/favicon-32x32.png'
+[2025-07-30 11:19:23] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/favicon-32x32.png
+[2025-07-30 11:19:23] Static file check - Resolved: NOT FOUND
+[2025-07-30 11:19:23] 404 - No route found for: /favicon-32x32.png
+[2025-07-30 11:19:44] === NEW REQUEST ===
+[2025-07-30 11:19:44] REQUEST_URI: /
+[2025-07-30 11:19:44] Processing URI: '/'
+[2025-07-30 11:19:44] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 11:19:44] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 11:19:44] === NEW REQUEST ===
+[2025-07-30 11:19:44] REQUEST_URI: /assets/css/Home.css?v=1.1
+[2025-07-30 11:19:44] Processing URI: '/assets/css/Home.css'
+[2025-07-30 11:19:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/css/Home.css
+[2025-07-30 11:19:44] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 11:19:44] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 11:19:44] === NEW REQUEST ===
+[2025-07-30 11:19:44] REQUEST_URI: /assets/js/Home.js?v=1.1
+[2025-07-30 11:19:44] Processing URI: '/assets/js/Home.js'
+[2025-07-30 11:19:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/js/Home.js
+[2025-07-30 11:19:44] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 11:19:44] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 11:19:44] === NEW REQUEST ===
+[2025-07-30 11:19:44] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 11:19:44] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 11:19:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 11:19:44] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 11:19:44] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 11:19:44] === NEW REQUEST ===
+[2025-07-30 11:19:44] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 11:19:44] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 11:19:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 11:19:44] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 11:19:44] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 11:20:02] === NEW REQUEST ===
+[2025-07-30 11:20:02] REQUEST_URI: /admin
+[2025-07-30 11:20:02] Processing URI: '/admin'
+[2025-07-30 11:20:02] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/admin/admin.php
+[2025-07-30 11:20:02] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/admin/admin.php
+[2025-07-30 11:20:02] === NEW REQUEST ===
+[2025-07-30 11:20:02] REQUEST_URI: /login
+[2025-07-30 11:20:02] Processing URI: '/login'
+[2025-07-30 11:20:02] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:20:02] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:20:02] === NEW REQUEST ===
+[2025-07-30 11:20:02] REQUEST_URI: /favicon.ico
+[2025-07-30 11:20:02] Processing URI: '/favicon.ico'
+[2025-07-30 11:20:02] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/favicon.ico
+[2025-07-30 11:20:02] Static file check - Resolved: NOT FOUND
+[2025-07-30 11:20:02] 404 - No route found for: /favicon.ico
+[2025-07-30 11:20:11] === NEW REQUEST ===
+[2025-07-30 11:20:11] REQUEST_URI: /login
+[2025-07-30 11:20:11] Processing URI: '/login'
+[2025-07-30 11:20:11] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:20:11] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:20:11] === NEW REQUEST ===
+[2025-07-30 11:20:11] REQUEST_URI: /admin
+[2025-07-30 11:20:11] Processing URI: '/admin'
+[2025-07-30 11:20:11] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/admin/admin.php
+[2025-07-30 11:20:11] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/admin/admin.php
+[2025-07-30 11:24:04] === NEW REQUEST ===
+[2025-07-30 11:24:04] REQUEST_URI: /upload
+[2025-07-30 11:24:04] Processing URI: '/upload'
+[2025-07-30 11:24:04] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:24:04] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:27] === NEW REQUEST ===
+[2025-07-30 11:26:27] REQUEST_URI: /upload
+[2025-07-30 11:26:27] Processing URI: '/upload'
+[2025-07-30 11:26:27] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:27] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:33] === NEW REQUEST ===
+[2025-07-30 11:26:33] REQUEST_URI: /upload
+[2025-07-30 11:26:33] Processing URI: '/upload'
+[2025-07-30 11:26:33] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:33] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:41] === NEW REQUEST ===
+[2025-07-30 11:26:41] REQUEST_URI: /upload?/logout=true
+[2025-07-30 11:26:41] Processing URI: '/upload'
+[2025-07-30 11:26:41] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:41] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:44] === NEW REQUEST ===
+[2025-07-30 11:26:44] REQUEST_URI: /upload?/logout=true
+[2025-07-30 11:26:44] Processing URI: '/upload'
+[2025-07-30 11:26:44] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:44] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:48] === NEW REQUEST ===
+[2025-07-30 11:26:48] REQUEST_URI: /upload?/logout=true
+[2025-07-30 11:26:48] Processing URI: '/upload'
+[2025-07-30 11:26:48] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:26:48] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:17] === NEW REQUEST ===
+[2025-07-30 11:27:17] REQUEST_URI: /upload?/logout=true
+[2025-07-30 11:27:17] Processing URI: '/upload'
+[2025-07-30 11:27:17] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:17] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:19] === NEW REQUEST ===
+[2025-07-30 11:27:19] REQUEST_URI: /upload?/logout=true
+[2025-07-30 11:27:19] Processing URI: '/upload'
+[2025-07-30 11:27:19] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:19] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:52] === NEW REQUEST ===
+[2025-07-30 11:27:52] REQUEST_URI: /upload?/logout=true
+[2025-07-30 11:27:52] Processing URI: '/upload'
+[2025-07-30 11:27:52] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:52] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:54] === NEW REQUEST ===
+[2025-07-30 11:27:54] REQUEST_URI: /upload?logout=true
+[2025-07-30 11:27:54] Processing URI: '/upload'
+[2025-07-30 11:27:54] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:54] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:27:54] === NEW REQUEST ===
+[2025-07-30 11:27:54] REQUEST_URI: /logout
+[2025-07-30 11:27:54] Processing URI: '/logout'
+[2025-07-30 11:27:54] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/logout.php
+[2025-07-30 11:27:54] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/logout.php
+[2025-07-30 11:27:54] === NEW REQUEST ===
+[2025-07-30 11:27:54] REQUEST_URI: /login
+[2025-07-30 11:27:54] Processing URI: '/login'
+[2025-07-30 11:27:54] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:27:54] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:32:13] === NEW REQUEST ===
+[2025-07-30 11:32:13] REQUEST_URI: /login
+[2025-07-30 11:32:13] Processing URI: '/login'
+[2025-07-30 11:32:13] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:32:13] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/auth/login.php
+[2025-07-30 11:32:13] === NEW REQUEST ===
+[2025-07-30 11:32:13] REQUEST_URI: /admin
+[2025-07-30 11:32:13] Processing URI: '/admin'
+[2025-07-30 11:32:13] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/admin/admin.php
+[2025-07-30 11:32:13] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/admin/admin.php
+[2025-07-30 11:32:15] === NEW REQUEST ===
+[2025-07-30 11:32:15] REQUEST_URI: /upload
+[2025-07-30 11:32:15] Processing URI: '/upload'
+[2025-07-30 11:32:15] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:32:15] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:32:27] === NEW REQUEST ===
+[2025-07-30 11:32:27] REQUEST_URI: /upload
+[2025-07-30 11:32:27] Processing URI: '/upload'
+[2025-07-30 11:32:27] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:32:27] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:32:32] === NEW REQUEST ===
+[2025-07-30 11:32:32] REQUEST_URI: /upload
+[2025-07-30 11:32:32] Processing URI: '/upload'
+[2025-07-30 11:32:32] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 11:32:32] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/backend/upload/Upload_Files.php
+[2025-07-30 12:14:50] === NEW REQUEST ===
+[2025-07-30 12:14:50] REQUEST_URI: /
+[2025-07-30 12:14:50] Processing URI: '/'
+[2025-07-30 12:14:50] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 12:14:50] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 12:14:50] === NEW REQUEST ===
+[2025-07-30 12:14:50] REQUEST_URI: /assets/css/Home.css?v=1.1
+[2025-07-30 12:14:50] Processing URI: '/assets/css/Home.css'
+[2025-07-30 12:14:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/css/Home.css
+[2025-07-30 12:14:50] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 12:14:50] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 12:14:50] === NEW REQUEST ===
+[2025-07-30 12:14:50] REQUEST_URI: /assets/js/Home.js?v=1.1
+[2025-07-30 12:14:50] Processing URI: '/assets/js/Home.js'
+[2025-07-30 12:14:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/js/Home.js
+[2025-07-30 12:14:50] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 12:14:50] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 12:14:50] === NEW REQUEST ===
+[2025-07-30 12:14:50] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:14:50] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:14:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:14:50] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:14:50] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:14:50] === NEW REQUEST ===
+[2025-07-30 12:14:50] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:14:50] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:14:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:14:50] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:14:50] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:15:02] === NEW REQUEST ===
+[2025-07-30 12:15:02] REQUEST_URI: /pages/contact.html
+[2025-07-30 12:15:02] Processing URI: '/pages/contact.html'
+[2025-07-30 12:15:02] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/contact.html
+[2025-07-30 12:15:02] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:15:02] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:15:02] === NEW REQUEST ===
+[2025-07-30 12:15:02] REQUEST_URI: /pages/images/Header--Transparent.png
+[2025-07-30 12:15:02] Processing URI: '/pages/images/Header--Transparent.png'
+[2025-07-30 12:15:02] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/images/Header--Transparent.png
+[2025-07-30 12:15:02] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:15:02] 404 - No route found for: /pages/images/Header--Transparent.png
+[2025-07-30 12:15:57] === NEW REQUEST ===
+[2025-07-30 12:15:57] REQUEST_URI: /pages/contact.html
+[2025-07-30 12:15:57] Processing URI: '/pages/contact.html'
+[2025-07-30 12:15:57] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/contact.html
+[2025-07-30 12:15:57] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:15:57] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:15:57] === NEW REQUEST ===
+[2025-07-30 12:15:57] REQUEST_URI: /pages/images/Header--Transparent.png
+[2025-07-30 12:15:57] Processing URI: '/pages/images/Header--Transparent.png'
+[2025-07-30 12:15:57] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/images/Header--Transparent.png
+[2025-07-30 12:15:57] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:15:57] 404 - No route found for: /pages/images/Header--Transparent.png
+[2025-07-30 12:15:57] === NEW REQUEST ===
+[2025-07-30 12:15:57] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:15:57] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:15:57] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:15:57] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:15:57] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:15] === NEW REQUEST ===
+[2025-07-30 12:16:15] REQUEST_URI: /pages/contact.html
+[2025-07-30 12:16:15] Processing URI: '/pages/contact.html'
+[2025-07-30 12:16:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/contact.html
+[2025-07-30 12:16:15] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:16:15] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:16:15] === NEW REQUEST ===
+[2025-07-30 12:16:15] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:16:15] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:16:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:16:15] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:15] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:18] === NEW REQUEST ===
+[2025-07-30 12:16:18] REQUEST_URI: /pages/sectors.html
+[2025-07-30 12:16:18] Processing URI: '/pages/sectors.html'
+[2025-07-30 12:16:18] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/sectors.html
+[2025-07-30 12:16:18] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\sectors.html
+[2025-07-30 12:16:18] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\sectors.html
+[2025-07-30 12:16:18] === NEW REQUEST ===
+[2025-07-30 12:16:18] REQUEST_URI: /public/pages/images/Header--Transparent.png
+[2025-07-30 12:16:18] Processing URI: '/public/pages/images/Header--Transparent.png'
+[2025-07-30 12:16:18] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/public/pages/images/Header--Transparent.png
+[2025-07-30 12:16:18] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:16:18] 404 - No route found for: /public/pages/images/Header--Transparent.png
+[2025-07-30 12:16:18] === NEW REQUEST ===
+[2025-07-30 12:16:18] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:16:18] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:16:18] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:16:18] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:18] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:42] === NEW REQUEST ===
+[2025-07-30 12:16:42] REQUEST_URI: /pages/sectors.html
+[2025-07-30 12:16:42] Processing URI: '/pages/sectors.html'
+[2025-07-30 12:16:42] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/sectors.html
+[2025-07-30 12:16:42] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\sectors.html
+[2025-07-30 12:16:42] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\sectors.html
+[2025-07-30 12:16:42] === NEW REQUEST ===
+[2025-07-30 12:16:42] REQUEST_URI: /assets/pages/images/Header--Transparent.png
+[2025-07-30 12:16:42] Processing URI: '/assets/pages/images/Header--Transparent.png'
+[2025-07-30 12:16:42] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/pages/images/Header--Transparent.png
+[2025-07-30 12:16:42] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:16:42] 404 - No route found for: /assets/pages/images/Header--Transparent.png
+[2025-07-30 12:16:42] === NEW REQUEST ===
+[2025-07-30 12:16:42] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:16:42] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:16:42] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:16:42] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:42] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:57] === NEW REQUEST ===
+[2025-07-30 12:16:57] REQUEST_URI: /pages/about.html
+[2025-07-30 12:16:57] Processing URI: '/pages/about.html'
+[2025-07-30 12:16:57] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:16:57] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:16:57] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:16:57] === NEW REQUEST ===
+[2025-07-30 12:16:57] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:16:57] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:16:57] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:16:57] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:16:57] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:00] === NEW REQUEST ===
+[2025-07-30 12:17:00] REQUEST_URI: /pages/contact.html
+[2025-07-30 12:17:00] Processing URI: '/pages/contact.html'
+[2025-07-30 12:17:00] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/contact.html
+[2025-07-30 12:17:00] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:17:00] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\contact.html
+[2025-07-30 12:17:00] === NEW REQUEST ===
+[2025-07-30 12:17:00] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:17:00] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:17:00] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:17:00] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:00] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:02] === NEW REQUEST ===
+[2025-07-30 12:17:02] REQUEST_URI: /
+[2025-07-30 12:17:02] Processing URI: '/'
+[2025-07-30 12:17:02] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 12:17:02] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 12:17:03] === NEW REQUEST ===
+[2025-07-30 12:17:03] REQUEST_URI: /assets/css/Home.css?v=1.1
+[2025-07-30 12:17:03] Processing URI: '/assets/css/Home.css'
+[2025-07-30 12:17:03] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/css/Home.css
+[2025-07-30 12:17:03] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 12:17:03] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 12:17:03] === NEW REQUEST ===
+[2025-07-30 12:17:03] REQUEST_URI: /assets/js/Home.js?v=1.1
+[2025-07-30 12:17:03] Processing URI: '/assets/js/Home.js'
+[2025-07-30 12:17:03] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/js/Home.js
+[2025-07-30 12:17:03] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 12:17:03] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 12:17:03] === NEW REQUEST ===
+[2025-07-30 12:17:03] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:17:03] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:17:03] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:17:03] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:03] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:03] === NEW REQUEST ===
+[2025-07-30 12:17:03] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:17:03] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:17:03] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:17:03] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:17:03] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:17:30] === NEW REQUEST ===
+[2025-07-30 12:17:30] REQUEST_URI: /pages/about.html
+[2025-07-30 12:17:30] Processing URI: '/pages/about.html'
+[2025-07-30 12:17:30] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:17:30] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:17:30] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:17:30] === NEW REQUEST ===
+[2025-07-30 12:17:30] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:17:30] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:17:30] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:17:30] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:30] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:31] === NEW REQUEST ===
+[2025-07-30 12:17:31] REQUEST_URI: /pages/services.html
+[2025-07-30 12:17:31] Processing URI: '/pages/services.html'
+[2025-07-30 12:17:31] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/services.html
+[2025-07-30 12:17:31] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\services.html
+[2025-07-30 12:17:31] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\services.html
+[2025-07-30 12:17:31] === NEW REQUEST ===
+[2025-07-30 12:17:31] REQUEST_URI: /assets/css/services.css
+[2025-07-30 12:17:31] Processing URI: '/assets/css/services.css'
+[2025-07-30 12:17:31] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/css/services.css
+[2025-07-30 12:17:31] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\services.css
+[2025-07-30 12:17:31] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\services.css
+[2025-07-30 12:17:31] === NEW REQUEST ===
+[2025-07-30 12:17:31] REQUEST_URI: /assets/js/services.js
+[2025-07-30 12:17:31] Processing URI: '/assets/js/services.js'
+[2025-07-30 12:17:31] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/js/services.js
+[2025-07-30 12:17:31] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\services.js
+[2025-07-30 12:17:31] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\services.js
+[2025-07-30 12:17:31] === NEW REQUEST ===
+[2025-07-30 12:17:31] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:17:31] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:17:31] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:17:31] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:31] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:31] === NEW REQUEST ===
+[2025-07-30 12:17:31] REQUEST_URI: /assets/data/service.json
+[2025-07-30 12:17:31] Processing URI: '/assets/data/service.json'
+[2025-07-30 12:17:31] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/data/service.json
+[2025-07-30 12:17:31] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\data\service.json
+[2025-07-30 12:17:31] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\data\service.json
+[2025-07-30 12:17:32] === NEW REQUEST ===
+[2025-07-30 12:17:32] REQUEST_URI: /pages/about.html
+[2025-07-30 12:17:32] Processing URI: '/pages/about.html'
+[2025-07-30 12:17:32] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:17:32] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:17:32] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:17:33] === NEW REQUEST ===
+[2025-07-30 12:17:33] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:17:33] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:17:33] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:17:33] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:17:33] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /pages/about.html
+[2025-07-30 12:21:22] Processing URI: '/pages/about.html'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:21:22] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:21:22] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /assets/images/dev1.jpg
+[2025-07-30 12:21:22] Processing URI: '/assets/images/dev1.jpg'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev1.jpg
+[2025-07-30 12:21:22] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:21:22] 404 - No route found for: /assets/images/dev1.jpg
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /assets/images/dev2.jpg
+[2025-07-30 12:21:22] Processing URI: '/assets/images/dev2.jpg'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev2.jpg
+[2025-07-30 12:21:22] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:21:22] 404 - No route found for: /assets/images/dev2.jpg
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /assets/images/dev3.jpg
+[2025-07-30 12:21:22] Processing URI: '/assets/images/dev3.jpg'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev3.jpg
+[2025-07-30 12:21:22] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:21:22] 404 - No route found for: /assets/images/dev3.jpg
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /assets/images/dev4.jpg
+[2025-07-30 12:21:22] Processing URI: '/assets/images/dev4.jpg'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev4.jpg
+[2025-07-30 12:21:22] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:21:22] 404 - No route found for: /assets/images/dev4.jpg
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /assets/images/smart-city.jpg
+[2025-07-30 12:21:22] Processing URI: '/assets/images/smart-city.jpg'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smart-city.jpg
+[2025-07-30 12:21:22] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:21:22] 404 - No route found for: /assets/images/smart-city.jpg
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /assets/images/traffic-control.jpg
+[2025-07-30 12:21:22] Processing URI: '/assets/images/traffic-control.jpg'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic-control.jpg
+[2025-07-30 12:21:22] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:21:22] 404 - No route found for: /assets/images/traffic-control.jpg
+[2025-07-30 12:21:22] === NEW REQUEST ===
+[2025-07-30 12:21:22] REQUEST_URI: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:21:22] Processing URI: '/assets/images/iot-monitoring.jpg'
+[2025-07-30 12:21:22] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot-monitoring.jpg
+[2025-07-30 12:21:22] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:21:22] 404 - No route found for: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:21:46] === NEW REQUEST ===
+[2025-07-30 12:21:46] REQUEST_URI: /pages/about.html
+[2025-07-30 12:21:46] Processing URI: '/pages/about.html'
+[2025-07-30 12:21:46] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:21:46] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:21:46] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:21:46] === NEW REQUEST ===
+[2025-07-30 12:21:46] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:21:46] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:21:46] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:21:46] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:21:46] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /pages/about.html
+[2025-07-30 12:24:15] Processing URI: '/pages/about.html'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:24:15] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:24:15] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /assets/images/smart-city.jpg
+[2025-07-30 12:24:15] Processing URI: '/assets/images/smart-city.jpg'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smart-city.jpg
+[2025-07-30 12:24:15] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:24:15] 404 - No route found for: /assets/images/smart-city.jpg
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /assets/images/traffic-control.jpg
+[2025-07-30 12:24:15] Processing URI: '/assets/images/traffic-control.jpg'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic-control.jpg
+[2025-07-30 12:24:15] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:24:15] 404 - No route found for: /assets/images/traffic-control.jpg
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:24:15] Processing URI: '/assets/images/iot-monitoring.jpg'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot-monitoring.jpg
+[2025-07-30 12:24:15] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:24:15] 404 - No route found for: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /assets/images/dev1.jpg
+[2025-07-30 12:24:15] Processing URI: '/assets/images/dev1.jpg'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev1.jpg
+[2025-07-30 12:24:15] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:24:15] 404 - No route found for: /assets/images/dev1.jpg
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /assets/images/dev2.jpg
+[2025-07-30 12:24:15] Processing URI: '/assets/images/dev2.jpg'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev2.jpg
+[2025-07-30 12:24:15] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:24:15] 404 - No route found for: /assets/images/dev2.jpg
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /assets/images/dev3.jpg
+[2025-07-30 12:24:15] Processing URI: '/assets/images/dev3.jpg'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev3.jpg
+[2025-07-30 12:24:15] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:24:15] 404 - No route found for: /assets/images/dev3.jpg
+[2025-07-30 12:24:15] === NEW REQUEST ===
+[2025-07-30 12:24:15] REQUEST_URI: /assets/images/dev4.jpg
+[2025-07-30 12:24:15] Processing URI: '/assets/images/dev4.jpg'
+[2025-07-30 12:24:15] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev4.jpg
+[2025-07-30 12:24:15] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:24:15] 404 - No route found for: /assets/images/dev4.jpg
+[2025-07-30 12:28:12] === NEW REQUEST ===
+[2025-07-30 12:28:12] REQUEST_URI: /pages/about.html
+[2025-07-30 12:28:12] Processing URI: '/pages/about.html'
+[2025-07-30 12:28:12] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:28:12] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:28:12] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:28:12] === NEW REQUEST ===
+[2025-07-30 12:28:12] REQUEST_URI: /assets/images/smart-city.jpg
+[2025-07-30 12:28:12] Processing URI: '/assets/images/smart-city.jpg'
+[2025-07-30 12:28:12] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smart-city.jpg
+[2025-07-30 12:28:12] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:12] 404 - No route found for: /assets/images/smart-city.jpg
+[2025-07-30 12:28:12] === NEW REQUEST ===
+[2025-07-30 12:28:12] REQUEST_URI: /assets/images/traffic-control.jpg
+[2025-07-30 12:28:12] Processing URI: '/assets/images/traffic-control.jpg'
+[2025-07-30 12:28:12] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic-control.jpg
+[2025-07-30 12:28:12] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:12] 404 - No route found for: /assets/images/traffic-control.jpg
+[2025-07-30 12:28:12] === NEW REQUEST ===
+[2025-07-30 12:28:12] REQUEST_URI: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:12] Processing URI: '/assets/images/iot-monitoring.jpg'
+[2025-07-30 12:28:12] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:12] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:12] 404 - No route found for: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:12] === NEW REQUEST ===
+[2025-07-30 12:28:12] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:28:12] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:28:12] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:28:12] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:28:12] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:28:39] === NEW REQUEST ===
+[2025-07-30 12:28:39] REQUEST_URI: /pages/about.html
+[2025-07-30 12:28:39] Processing URI: '/pages/about.html'
+[2025-07-30 12:28:39] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:28:39] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:28:39] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:28:39] === NEW REQUEST ===
+[2025-07-30 12:28:39] REQUEST_URI: /assets/images/smart-city.jpg
+[2025-07-30 12:28:39] Processing URI: '/assets/images/smart-city.jpg'
+[2025-07-30 12:28:39] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smart-city.jpg
+[2025-07-30 12:28:39] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:39] 404 - No route found for: /assets/images/smart-city.jpg
+[2025-07-30 12:28:39] === NEW REQUEST ===
+[2025-07-30 12:28:39] REQUEST_URI: /assets/images/traffic-control.jpg
+[2025-07-30 12:28:39] Processing URI: '/assets/images/traffic-control.jpg'
+[2025-07-30 12:28:39] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic-control.jpg
+[2025-07-30 12:28:39] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:39] 404 - No route found for: /assets/images/traffic-control.jpg
+[2025-07-30 12:28:39] === NEW REQUEST ===
+[2025-07-30 12:28:39] REQUEST_URI: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:39] Processing URI: '/assets/images/iot-monitoring.jpg'
+[2025-07-30 12:28:39] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:39] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:39] 404 - No route found for: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:39] === NEW REQUEST ===
+[2025-07-30 12:28:39] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:28:39] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:28:39] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:28:39] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:28:39] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:28:50] === NEW REQUEST ===
+[2025-07-30 12:28:50] REQUEST_URI: /pages/about.html
+[2025-07-30 12:28:50] Processing URI: '/pages/about.html'
+[2025-07-30 12:28:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:28:50] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:28:50] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:28:50] === NEW REQUEST ===
+[2025-07-30 12:28:50] REQUEST_URI: /assets/images/smart-city.jpg
+[2025-07-30 12:28:50] Processing URI: '/assets/images/smart-city.jpg'
+[2025-07-30 12:28:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smart-city.jpg
+[2025-07-30 12:28:50] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:50] 404 - No route found for: /assets/images/smart-city.jpg
+[2025-07-30 12:28:50] === NEW REQUEST ===
+[2025-07-30 12:28:50] REQUEST_URI: /assets/images/traffic-control.jpg
+[2025-07-30 12:28:50] Processing URI: '/assets/images/traffic-control.jpg'
+[2025-07-30 12:28:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic-control.jpg
+[2025-07-30 12:28:50] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:50] 404 - No route found for: /assets/images/traffic-control.jpg
+[2025-07-30 12:28:50] === NEW REQUEST ===
+[2025-07-30 12:28:50] REQUEST_URI: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:50] Processing URI: '/assets/images/iot-monitoring.jpg'
+[2025-07-30 12:28:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:50] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:28:50] 404 - No route found for: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:28:50] === NEW REQUEST ===
+[2025-07-30 12:28:50] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:28:50] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:28:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:28:50] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:28:50] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:29:52] === NEW REQUEST ===
+[2025-07-30 12:29:52] REQUEST_URI: /pages/about.html
+[2025-07-30 12:29:52] Processing URI: '/pages/about.html'
+[2025-07-30 12:29:52] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:29:52] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:29:52] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:29:52] === NEW REQUEST ===
+[2025-07-30 12:29:52] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:29:52] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:29:52] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:29:52] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:29:52] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:29:52] === NEW REQUEST ===
+[2025-07-30 12:29:52] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:29:52] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:29:52] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:29:52] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:29:52] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:32:05] === NEW REQUEST ===
+[2025-07-30 12:32:05] REQUEST_URI: /pages/about.html
+[2025-07-30 12:32:05] Processing URI: '/pages/about.html'
+[2025-07-30 12:32:05] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:32:05] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:32:05] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:32:05] === NEW REQUEST ===
+[2025-07-30 12:32:05] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:32:05] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:32:05] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:32:05] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:32:05] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:32:05] === NEW REQUEST ===
+[2025-07-30 12:32:05] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:32:05] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:32:05] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:32:05] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:32:05] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:32:05] === NEW REQUEST ===
+[2025-07-30 12:32:05] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:32:05] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:32:05] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:32:05] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:32:05] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:32:53] === NEW REQUEST ===
+[2025-07-30 12:32:53] REQUEST_URI: /pages/about.html
+[2025-07-30 12:32:53] Processing URI: '/pages/about.html'
+[2025-07-30 12:32:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:32:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:32:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:32:53] === NEW REQUEST ===
+[2025-07-30 12:32:53] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:32:53] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:32:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:32:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:32:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:32:53] === NEW REQUEST ===
+[2025-07-30 12:32:53] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:32:53] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:32:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:32:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:32:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:32:53] === NEW REQUEST ===
+[2025-07-30 12:32:53] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:32:53] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:32:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:32:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:32:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /pages/about.html
+[2025-07-30 12:33:14] Processing URI: '/pages/about.html'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:33:14] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:33:14] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/smart-city.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/smart-city.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smart-city.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/smart-city.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/traffic-control.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/traffic-control.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic-control.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/traffic-control.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/iot-monitoring.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot-monitoring.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/partner1.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/partner1.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner1.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/partner1.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/dev1.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/dev1.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev1.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/dev1.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/dev2.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/dev2.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev2.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/dev2.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/dev3.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/dev3.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev3.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/dev3.jpg
+[2025-07-30 12:33:14] === NEW REQUEST ===
+[2025-07-30 12:33:14] REQUEST_URI: /assets/images/dev4.jpg
+[2025-07-30 12:33:14] Processing URI: '/assets/images/dev4.jpg'
+[2025-07-30 12:33:14] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev4.jpg
+[2025-07-30 12:33:14] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:33:14] 404 - No route found for: /assets/images/dev4.jpg
+[2025-07-30 12:34:43] === NEW REQUEST ===
+[2025-07-30 12:34:43] REQUEST_URI: /pages/about.html
+[2025-07-30 12:34:43] Processing URI: '/pages/about.html'
+[2025-07-30 12:34:43] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:34:43] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:34:43] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:34:44] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:34:44] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:34:44] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/smart-city.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/smart-city.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smart-city.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/smart-city.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/traffic-control.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/traffic-control.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic-control.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/traffic-control.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/iot-monitoring.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot-monitoring.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/iot-monitoring.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/partner1.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/partner1.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner1.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/partner1.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/dev1.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/dev1.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev1.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/dev1.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/dev2.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/dev2.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev2.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/dev2.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/dev3.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/dev3.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev3.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/dev3.jpg
+[2025-07-30 12:34:44] === NEW REQUEST ===
+[2025-07-30 12:34:44] REQUEST_URI: /assets/images/dev4.jpg
+[2025-07-30 12:34:44] Processing URI: '/assets/images/dev4.jpg'
+[2025-07-30 12:34:44] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev4.jpg
+[2025-07-30 12:34:44] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:34:44] 404 - No route found for: /assets/images/dev4.jpg
+[2025-07-30 12:36:17] === NEW REQUEST ===
+[2025-07-30 12:36:17] REQUEST_URI: /pages/about.html
+[2025-07-30 12:36:17] Processing URI: '/pages/about.html'
+[2025-07-30 12:36:17] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:36:17] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:36:17] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:36:17] === NEW REQUEST ===
+[2025-07-30 12:36:17] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:36:17] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:36:17] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:36:17] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:36:17] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:36:17] === NEW REQUEST ===
+[2025-07-30 12:36:17] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:36:17] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:36:17] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:36:17] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:36:17] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:36:17] === NEW REQUEST ===
+[2025-07-30 12:36:17] REQUEST_URI: /assets/images/dev1.jpg
+[2025-07-30 12:36:17] Processing URI: '/assets/images/dev1.jpg'
+[2025-07-30 12:36:17] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev1.jpg
+[2025-07-30 12:36:17] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:36:17] 404 - No route found for: /assets/images/dev1.jpg
+[2025-07-30 12:36:17] === NEW REQUEST ===
+[2025-07-30 12:36:17] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:36:17] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:36:17] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:36:17] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:36:17] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:36:41] === NEW REQUEST ===
+[2025-07-30 12:36:41] REQUEST_URI: /pages/about.html
+[2025-07-30 12:36:41] Processing URI: '/pages/about.html'
+[2025-07-30 12:36:41] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:36:41] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:36:41] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:36:41] === NEW REQUEST ===
+[2025-07-30 12:36:41] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:36:41] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:36:41] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:36:41] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:36:41] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:36:41] === NEW REQUEST ===
+[2025-07-30 12:36:41] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:36:41] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:36:41] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:36:41] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:36:41] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:36:41] === NEW REQUEST ===
+[2025-07-30 12:36:41] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:36:41] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:36:41] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:36:41] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:36:41] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:36:41] === NEW REQUEST ===
+[2025-07-30 12:36:41] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:36:41] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:36:41] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:36:41] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:36:41] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:38:04] === NEW REQUEST ===
+[2025-07-30 12:38:04] REQUEST_URI: /pages/about.html
+[2025-07-30 12:38:04] Processing URI: '/pages/about.html'
+[2025-07-30 12:38:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:38:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:38:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:38:04] === NEW REQUEST ===
+[2025-07-30 12:38:04] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:38:04] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:38:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:38:04] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:38:04] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:38:04] === NEW REQUEST ===
+[2025-07-30 12:38:04] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:38:04] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:38:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:38:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:38:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:38:04] === NEW REQUEST ===
+[2025-07-30 12:38:04] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:38:04] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:38:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:38:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:38:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:38:04] === NEW REQUEST ===
+[2025-07-30 12:38:04] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:38:04] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:38:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:38:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:38:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:39:04] === NEW REQUEST ===
+[2025-07-30 12:39:04] REQUEST_URI: /pages/about.html
+[2025-07-30 12:39:04] Processing URI: '/pages/about.html'
+[2025-07-30 12:39:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:39:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:39:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:39:04] === NEW REQUEST ===
+[2025-07-30 12:39:04] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:39:04] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:39:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:39:04] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:39:04] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:39:04] === NEW REQUEST ===
+[2025-07-30 12:39:04] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:39:04] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:39:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:39:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:39:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:39:04] === NEW REQUEST ===
+[2025-07-30 12:39:04] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:39:04] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:39:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:39:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:39:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:39:04] === NEW REQUEST ===
+[2025-07-30 12:39:04] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:39:04] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:39:04] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:39:04] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:39:04] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:42:08] === NEW REQUEST ===
+[2025-07-30 12:42:08] REQUEST_URI: /pages/about.html
+[2025-07-30 12:42:08] Processing URI: '/pages/about.html'
+[2025-07-30 12:42:08] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:42:08] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:42:08] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:42:08] === NEW REQUEST ===
+[2025-07-30 12:42:08] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:42:08] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:42:08] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:42:08] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:42:08] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:42:08] === NEW REQUEST ===
+[2025-07-30 12:42:08] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:42:08] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:42:08] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:42:08] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:42:08] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:42:08] === NEW REQUEST ===
+[2025-07-30 12:42:08] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:42:08] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:42:08] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:42:08] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:42:08] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:42:08] === NEW REQUEST ===
+[2025-07-30 12:42:08] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:42:08] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:42:08] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:42:08] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:42:08] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:42:10] === NEW REQUEST ===
+[2025-07-30 12:42:10] REQUEST_URI: /pages/www.linkedin.com/in/sai-sreekar-reddy-108753250
+[2025-07-30 12:42:10] Processing URI: '/pages/www.linkedin.com/in/sai-sreekar-reddy-108753250'
+[2025-07-30 12:42:10] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/www.linkedin.com/in/sai-sreekar-reddy-108753250
+[2025-07-30 12:42:10] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:42:10] 404 - No route found for: /pages/www.linkedin.com/in/sai-sreekar-reddy-108753250
+[2025-07-30 12:43:53] === NEW REQUEST ===
+[2025-07-30 12:43:53] REQUEST_URI: /pages/about.html
+[2025-07-30 12:43:53] Processing URI: '/pages/about.html'
+[2025-07-30 12:43:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:43:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:43:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:43:53] === NEW REQUEST ===
+[2025-07-30 12:43:53] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:43:53] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:43:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:43:53] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:43:53] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:43:53] === NEW REQUEST ===
+[2025-07-30 12:43:53] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:43:53] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:43:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:43:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:43:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:43:53] === NEW REQUEST ===
+[2025-07-30 12:43:53] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:43:53] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:43:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:43:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:43:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:43:53] === NEW REQUEST ===
+[2025-07-30 12:43:53] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:43:53] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:43:53] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:43:53] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:43:53] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:44:49] === NEW REQUEST ===
+[2025-07-30 12:44:49] REQUEST_URI: /pages/about.html
+[2025-07-30 12:44:49] Processing URI: '/pages/about.html'
+[2025-07-30 12:44:49] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:44:49] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:44:49] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:44:49] === NEW REQUEST ===
+[2025-07-30 12:44:49] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:44:49] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:44:49] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:44:49] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:44:49] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:44:49] === NEW REQUEST ===
+[2025-07-30 12:44:49] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:44:49] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:44:49] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:44:49] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:44:49] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:44:49] === NEW REQUEST ===
+[2025-07-30 12:44:49] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:44:49] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:44:49] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:44:49] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:44:49] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:44:50] === NEW REQUEST ===
+[2025-07-30 12:44:50] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:44:50] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:44:50] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:44:50] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:44:50] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /pages/about.html
+[2025-07-30 12:53:01] Processing URI: '/pages/about.html'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/pages/about.html
+[2025-07-30 12:53:01] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:53:01] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\pages\about.html
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /assets/images/smartcity.jpg
+[2025-07-30 12:53:01] Processing URI: '/assets/images/smartcity.jpg'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/smartcity.jpg
+[2025-07-30 12:53:01] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\smartcity.jpg
+[2025-07-30 12:53:01] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\smartcity.jpg
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /assets/images/traffic%20management.jpg
+[2025-07-30 12:53:01] Processing URI: '/assets/images/traffic management.jpg'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/traffic management.jpg
+[2025-07-30 12:53:01] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\traffic management.jpg
+[2025-07-30 12:53:01] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\traffic management.jpg
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /assets/images/iot.jpg
+[2025-07-30 12:53:01] Processing URI: '/assets/images/iot.jpg'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/iot.jpg
+[2025-07-30 12:53:01] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\iot.jpg
+[2025-07-30 12:53:01] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\iot.jpg
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /assets/images/partner2.jpg
+[2025-07-30 12:53:01] Processing URI: '/assets/images/partner2.jpg'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/partner2.jpg
+[2025-07-30 12:53:01] Static file check - Resolved: NOT FOUND
+[2025-07-30 12:53:01] 404 - No route found for: /assets/images/partner2.jpg
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:53:01] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:53:01] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:53:01] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:53:01] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:53:01] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:53:01] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:53:01] === NEW REQUEST ===
+[2025-07-30 12:53:01] REQUEST_URI: /assets/images/dev-1.jpg
+[2025-07-30 12:53:01] Processing URI: '/assets/images/dev-1.jpg'
+[2025-07-30 12:53:01] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/dev-1.jpg
+[2025-07-30 12:53:01] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:53:01] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\dev-1.jpg
+[2025-07-30 12:53:33] === NEW REQUEST ===
+[2025-07-30 12:53:33] REQUEST_URI: /
+[2025-07-30 12:53:33] Processing URI: '/'
+[2025-07-30 12:53:33] Attempting to load: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 12:53:33] File found - including: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/index.html
+[2025-07-30 12:53:33] === NEW REQUEST ===
+[2025-07-30 12:53:33] REQUEST_URI: /assets/images/Header--Transparent.png
+[2025-07-30 12:53:33] Processing URI: '/assets/images/Header--Transparent.png'
+[2025-07-30 12:53:33] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/Header--Transparent.png
+[2025-07-30 12:53:33] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:53:33] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\Header--Transparent.png
+[2025-07-30 12:53:33] === NEW REQUEST ===
+[2025-07-30 12:53:33] REQUEST_URI: /assets/images/trident-1-logo.png
+[2025-07-30 12:53:33] Processing URI: '/assets/images/trident-1-logo.png'
+[2025-07-30 12:53:33] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/images/trident-1-logo.png
+[2025-07-30 12:53:33] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:53:33] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\images\trident-1-logo.png
+[2025-07-30 12:53:33] === NEW REQUEST ===
+[2025-07-30 12:53:33] REQUEST_URI: /assets/css/Home.css?v=1.1
+[2025-07-30 12:53:33] Processing URI: '/assets/css/Home.css'
+[2025-07-30 12:53:33] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/css/Home.css
+[2025-07-30 12:53:33] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 12:53:33] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\css\Home.css
+[2025-07-30 12:53:33] === NEW REQUEST ===
+[2025-07-30 12:53:33] REQUEST_URI: /assets/js/Home.js?v=1.1
+[2025-07-30 12:53:33] Processing URI: '/assets/js/Home.js'
+[2025-07-30 12:53:33] Static file check - Requested: C:\Users\gsais\OneDrive\Documents\ICSPL-P/public/assets/js/Home.js
+[2025-07-30 12:53:33] Static file check - Resolved: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js
+[2025-07-30 12:53:33] Serving static file: C:\Users\gsais\OneDrive\Documents\ICSPL-P\public\assets\js\Home.js

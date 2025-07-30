@@ -1,164 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="description" content="ICSPL offers smart engineering and sustainable solutions in Kurnool, Andhra Pradesh.">
-    <meta name="keywords" content="ICSPL, Smart Engineering, IoT, AI, Infrastructure, Sustainability">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>ICSPL - Intelligent Connect Solutions</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/Home.css?v=1.1">
-  </head>
-  <body class="scroll-smooth">  
-    <!-- Header / Navigation -->
-    <header class="fixed w-full text-white z-50">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center"><a href="/public/index.html">
-          <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="logo mr-2" style="width:550px" height="auto"></a>
-          <!-- <span class="text-xl font-bold tracking-wide hidden sm:inline">ICSPL</span> -->
-        </div>
-        <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-        <nav class="hidden md:flex space-x-6 text-sm md:text-base">
-          <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
-          <a href="/pages/about.html" class="hover:text-gray-300 transition-colors">About</a>
-          <a href="/pages/services.html" class="hover:text-gray-300 transition-colors">Services</a>
-          <a href="/pages/sectors.html" class="hover:text-gray-300 transition-colors">Sectors</a>
-          <a href="/pages/contact.html" class="hover:text-gray-300 transition-colors">Contact</a>
-        </nav>
-      </div>
-      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-        <a href="/public/index.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Home</a>
-        <a href="/public/pages/about.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">About</a>
-        <a href="/public/pages/services.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Services</a>
-        <a href="/public/pages/sectors.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Sectors</a>
-        <a href="/public/pages/contact.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Contact</a>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ICSPL offers smart engineering and sustainable solutions in Kurnool, Andhra Pradesh." />
+  <meta name="keywords" content="ICSPL, Smart Engineering, IoT, AI, Infrastructure, Sustainability" />
+  <title>ICSPL - Intelligent Connect Solutions</title>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-28 px-4 py-20 bg-gradient-to-b from-gray-900 to-black text-white text-center">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Intelligent Connect Solutions Pvt. Ltd. (ICSPL)</h1>
-        <p class="text-xl md:text-2xl mb-4">Smart Engineering & Sustainable Solutions for a Smarter & Sustainable Future</p>
-        <p class="text-gray-400">Transforming Infrastructure | Empowering Innovation | Connecting Intelligence</p>
-        <a href="/pages/contact.html" class="mt-8 inline-block bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
-          Get in Touch
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/Home.css?v=1.1" />
+</head>
+
+<body class="scroll-smooth">
+
+  <!-- Header / Navigation -->
+  <header class="fixed w-full text-white z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="/public/index.html">
+          <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="logo mr-2" style="width:550px" height="auto" />
         </a>
       </div>
-    </section>
+      <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav class="hidden md:flex space-x-6 text-sm md:text-base">
+        <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
+        <a href="/pages/about.html" class="hover:text-gray-300 transition-colors">About</a>
+        <a href="/pages/services.html" class="hover:text-gray-300 transition-colors">Services</a>
+        <a href="/pages/sectors.html" class="hover:text-gray-300 transition-colors">Sectors</a>
+        <a href="/pages/contact.html" class="hover:text-gray-300 transition-colors">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="/public/index.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Home</a>
+      <a href="/public/pages/about.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">About</a>
+      <a href="/public/pages/services.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Services</a>
+      <a href="/public/pages/sectors.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Sectors</a>
+      <a href="/public/pages/contact.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Contact</a>
+    </div>
+  </header>
 
-    <!-- About Section -->
-    <section id="about" class="px-4 py-20">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-8 text-center">About Us</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <p class="text-lg text-gray-300 mb-4">ICSPL, based in Kurnool, Andhra Pradesh, excels in engineering design and technology integration. We empower public, private, and defense sectors by delivering systems that drive efficiency, safety, and sustainability.</p>
-            <p class="text-lg text-gray-300">Our team of experts combines technical excellence with innovative thinking to provide cutting-edge solutions tailored to our clients' unique needs.</p>
+  <!-- Hero Section -->
+  <section id="home" class="pt-28 px-4 py-20 bg-gradient-to-b from-gray-900 to-black text-white text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Intelligent Connect Solutions Pvt. Ltd. (ICSPL)</h1>
+      <p class="text-xl md:text-2xl mb-4">Smart Engineering & Sustainable Solutions for a Smarter & Sustainable Future</p>
+      <p class="text-gray-400">Transforming Infrastructure | Empowering Innovation | Connecting Intelligence</p>
+      <a href="/pages/contact.html" class="mt-8 inline-block bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="px-4 py-20">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-8 text-center">About Us</h2>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-lg text-gray-300 mb-4">ICSPL, based in Kurnool, Andhra Pradesh, excels in engineering design and technology integration. We empower public, private, and defense sectors by delivering systems that drive efficiency, safety, and sustainability.</p>
+          <p class="text-lg text-gray-300">Our team of experts combines technical excellence with innovative thinking to provide cutting-edge solutions tailored to our clients' unique needs.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+          <h3 class="text-xl font-semibold mb-4">Our Mission</h3>
+          <p class="text-gray-300 mb-4">To deliver intelligent, sustainable solutions that transform industries and improve lives through innovative engineering and technology integration.</p>
+          <h3 class="text-xl font-semibold mb-4">Our Vision</h3>
+          <p class="text-gray-300">To be a global leader in smart engineering solutions, driving the transition to smarter, more sustainable infrastructure and systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blogs Section -->
+  <section id="blogs" class="py-20 bg-gray-900">
+    <h2 class="text-3xl font-semibold mb-12 text-center text-white">Latest Updates</h2>
+    <div class="blog-slider overflow-hidden relative">
+      <div class="flex transition-transform duration-500" id="blog-slides">
+        <!-- Blog Slide 1 -->
+        <div class="blog-slide flex-shrink-0 w-full">
+          <div class="grid md:grid-cols-2 gap-8 items-center py-12 px-4">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.V9jj53M-1aBfncUqaKGLpgHaEJ?pid=Api&P=0&h=180" alt="Blog Image" class="rounded-lg shadow-xl w-full h-auto">
+            <div class="text-white">
+              <h3 class="text-2xl font-bold mb-4">The Future of Smart Transportation Systems</h3>
+              <p class="text-gray-300 mb-4">Explore how ICSPL is revolutionizing transportation infrastructure with cutting-edge IoT solutions and AI-powered traffic management systems that reduce congestion and improve safety.</p>
+              <div class="flex items-center text-sm text-gray-400 mb-4">
+                <span>Published: June 15, 2023</span><span class="mx-2">•</span><span>5 min read</span>
+              </div>
+              <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">Read More</a>
+            </div>
           </div>
-          <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
-            <h3 class="text-xl font-semibold mb-4">Our Mission</h3>
-            <p class="text-gray-300 mb-4">To deliver intelligent, sustainable solutions that transform industries and improve lives through innovative engineering and technology integration.</p>
-            <h3 class="text-xl font-semibold mb-4">Our Vision</h3>
-            <p class="text-gray-300">To be a global leader in smart engineering solutions, driving the transition to smarter, more sustainable infrastructure and systems.</p>
+        </div>
+
+        <!-- Blog Slide 2 -->
+        <div class="blog-slide flex-shrink-0 w-full">
+          <div class="grid md:grid-cols-2 gap-8 items-center py-12 px-4">
+            <img src="https://www.businesswest.co.uk/sites/default/files/styles/event_image/public/blog/featured/blog_images.jpg?itok=uv1yW4hI" alt="Blog Image" class="rounded-lg shadow-xl w-full h-auto">
+            <div class="text-white">
+              <h3 class="text-2xl font-bold mb-4">Advancements in Military Training Technologies</h3>
+              <p class="text-gray-300 mb-4">Discover how ICSPL's innovative military training systems are enhancing defense preparedness through realistic simulation environments and advanced wire harness solutions.</p>
+              <div class="flex items-center text-sm text-gray-400 mb-4">
+                <span>Published: May 28, 2023</span><span class="mx-2">•</span><span>7 min read</span>
+              </div>
+              <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Slide 3 -->
+        <div class="blog-slide flex-shrink-0 w-full">
+          <div class="grid md:grid-cols-2 gap-8 items-center py-12 px-4">
+            <img src="https://wallpaperaccess.com/full/2433830.jpg" alt="Blog Image" class="rounded-lg shadow-xl w-full h-auto">
+            <div class="text-white">
+              <h3 class="text-2xl font-bold mb-4">Data-Driven Decision Making for Smart Cities</h3>
+              <p class="text-gray-300 mb-4">Learn how ICSPL's data analytics platforms are helping urban planners make informed decisions to create more sustainable and efficient smart city ecosystems.</p>
+              <div class="flex items-center text-sm text-gray-400 mb-4">
+                <span>Published: April 10, 2023</span><span class="mx-2">•</span><span>6 min read</span>
+              </div>
+              <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">Read More</a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-        <!-- Blogs Section -->
-    <section id="blogs" class="py-20 bg-gray-900">
-      <h2 class="text-3xl font-semibold mb-12 text-center text-white">Latest Updates</h2>
-      
-      <div class="blog-slider overflow-hidden relative">
-        <div class="flex transition-transform duration-500" id="blog-slides">
-          <!-- Blog Slide 1 -->
-          <div class="blog-slide flex-shrink-0 w-full">
-            <div class="blog-slide-content grid md:grid-cols-2 gap-8 items-center py-12">
-              <div class="px-4">
-                <img src="https://tse3.mm.bing.net/th/id/OIP.V9jj53M-1aBfncUqaKGLpgHaEJ?pid=Api&P=0&h=180" alt="Blog Image" class="rounded-lg shadow-xl w-full h-auto">
-              </div>
-              <div class="px-4 text-white">
-                <h3 class="text-2xl font-bold mb-4">The Future of Smart Transportation Systems</h3>
-                <p class="text-gray-300 mb-4">Explore how ICSPL is revolutionizing transportation infrastructure with cutting-edge IoT solutions and AI-powered traffic management systems that reduce congestion and improve safety.</p>
-                <div class="flex items-center text-sm text-gray-400 mb-4">
-                  <span>Published: June 15, 2023</span>
-                  <span class="mx-2">•</span>
-                  <span>5 min read</span>
-                </div>
-                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">Read More</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Blog Slide 2 -->
-          <div class="blog-slide flex-shrink-0 w-full">
-            <div class="blog-slide-content grid md:grid-cols-2 gap-8 items-center py-12">
-              <div class="px-4">
-                <img src="https://www.businesswest.co.uk/sites/default/files/styles/event_image/public/blog/featured/blog_images.jpg?itok=uv1yW4hI" alt="Blog Image" class="rounded-lg shadow-xl w-full h-auto">
-              </div>
-              <div class="px-4 text-white">
-                <h3 class="text-2xl font-bold mb-4">Advancements in Military Training Technologies</h3>
-                <p class="text-gray-300 mb-4">Discover how ICSPL's innovative military training systems are enhancing defense preparedness through realistic simulation environments and advanced wire harness solutions.</p>
-                <div class="flex items-center text-sm text-gray-400 mb-4">
-                  <span>Published: May 28, 2023</span>
-                  <span class="mx-2">•</span>
-                  <span>7 min read</span>
-                </div>
-                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">Read More</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Blog Slide 3 -->
-          <div class="blog-slide flex-shrink-0 w-full">
-            <div class="blog-slide-content grid md:grid-cols-2 gap-8 items-center py-12">
-              <div class="px-4">
-                <img src="https://wallpaperaccess.com/full/2433830.jpg" alt="Blog Image" class="rounded-lg shadow-xl w-full h-auto">
-              </div>
-              <div class="px-4 text-white">
-                <h3 class="text-2xl font-bold mb-4">Data-Driven Decision Making for Smart Cities</h3>
-                <p class="text-gray-300 mb-4">Learn how ICSPL's data analytics platforms are helping urban planners make informed decisions to create more sustainable and efficient smart city ecosystems.</p>
-                <div class="flex items-center text-sm text-gray-400 mb-4">
-                  <span>Published: April 10, 2023</span>
-                  <span class="mx-2">•</span>
-                  <span>6 min read</span>
-                </div>
-                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Navigation Arrows -->
-        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all z-10" onclick="prevSlide()">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all z-10" onclick="nextSlide()">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-        
-        <!-- Slide Indicators -->
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-          <div class="slide-indicator active" onclick="goToSlide(0)"></div>
-          <div class="slide-indicator" onclick="goToSlide(1)"></div>
-          <div class="slide-indicator" onclick="goToSlide(2)"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Contact Section -->
+      <!-- Navigation Arrows -->
+      <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all z-10" onclick="prevSlide()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all z-10" onclick="nextSlide()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <!-- Slide Indicators -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <div class="slide-indicator active" onclick="goToSlide(0)"></div>
+        <div class="slide-indicator" onclick="goToSlide(1)"></div>
+        <div class="slide-indicator" onclick="goToSlide(2)"></div>
+      </div>
+    </div>
+  </section>
+<!-- Co-Partner Section -->
+<div class="bg-black text-white text-center py-6 px-4">
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <img src="/assets/images/trident-1-logo.png" alt="Partner Logo" class="h-20">
+    <p class="text-sm">
+      Powered by 
+      <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">
+        Trident-Co
+      </a>
+    </p>
+  </div>
+</div>
+
+  <!-- Contact Section and Footer remain unchanged -->
+     <!-- Contact Section -->
     <section id="contact" class="px-4 py-20 bg-gray-900">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
@@ -271,6 +279,11 @@
         </div>
       </div>
     </footer>
-    <script src="/assets/js/Home.js?v=1.1"></script>
-  </body>
+  <!-- Place your Contact and Footer HTML sections here from your original code -->
+
+  <!-- JS -->
+  <script src="/assets/js/Home.js?v=1.1"></script>
+  <!-- Co-Partner Test -->
+
+</body>
 </html>
