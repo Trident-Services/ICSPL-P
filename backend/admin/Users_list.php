@@ -173,8 +173,8 @@ if ($count_result && $count_result->num_rows > 0) {
     <nav class="nav-links">
         <a href="/admin">Dashboard</a>
         <a href="/upload">Uploaded Files</a>
-        <a href="/users">User List</a>
-        <a href="?/logout=true" class="logout-btn">Logout</a>
+        <a href="/admin-users">Admin Users</a>
+        <a href="?logout=true" class="logout-btn">Logout</a>
     </nav>
 </div>
 
