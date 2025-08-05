@@ -36,3 +36,6 @@ node_modules/
 # Ignore compiled CSS/JS if using build tools
 dist/
 build/
+
+#router_debug logs
+router_debug.log

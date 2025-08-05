@@ -1,21 +1,23 @@
-# Enable mod_rewrite
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# If the requested file or directory exists, serve it directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+    # Only redirect if the request isn't for a real file or folder
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
 
-# Otherwise, route all requests to index.php
-RewriteRule ^ index.php [QSA,L]
+    # Serve index.html for all other routes (SPA fallback)
+    RewriteRule ^ index.html [L]
+</IfModule>
 
-# Optional: Add correct MIME types for fonts if needed
+# MIME types
 <IfModule mod_mime.c>
     AddType font/woff2 .woff2
     AddType font/woff .woff
     AddType font/ttf .ttf
 </IfModule>
 
-# Optional: Set caching headers for static files
+# Caching
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType text/css "access plus 1 week"
