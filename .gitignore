@@ -1,0 +1,38 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore editor folders (like VS Code)
+.vscode/
+
+# Ignore vendor folder (if using Composer)
+vendor/
+
+# Ignore environment and config files
+.env
+*.env
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore cache/temp files
+cache/
+tmp/
+*.tmp
+
+# Ignore OS generated files
+*.swp
+*.bak
+
+# Ignore uploaded files (optional)
+uploads/
+*.zip
+
+# Ignore node_modules (if you're using frontend tooling like npm/yarn)
+node_modules/
+
+# Ignore compiled CSS/JS if using build tools
+dist/
+build/
