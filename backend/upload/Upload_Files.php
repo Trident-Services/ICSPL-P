@@ -24,9 +24,78 @@ if (isset($_GET["logout"])) {
 
 $message = "";
 
+// Improved Excel content extraction function
+function extractExcelContent($filePath) {
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($filePath);
+    $worksheet = $spreadsheet->getActiveSheet();
+    $data = [];
+    
+    // Get highest row and column
+    $highestRow = $worksheet->getHighestRow();
+    $highestColumn = $worksheet->getHighestColumn();
+    $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn);
+    
+    // Process each row (skip header row)
+    for ($row = 2; $row <= $highestRow; $row++) {
+        $rowData = [];
+        for ($col = 1; $col <= $highestColumnIndex; $col++) {
+            $cell = $worksheet->getCellByColumnAndRow($col, $row);
+            $rowData[] = $cell->getFormattedValue();
+        }
+        
+        // Only process rows with data in title column (A)
+        if (!empty($rowData[0])) {
+            $entry = [
+                'title' => $rowData[0] ?? '', // Column A
+                'description' => $rowData[1] ?? '', // Column B
+                'timestamp' => $rowData[2] ?? date('Y-m-d H:i:s'),
+                'file_type' => $rowData[3] ?? 'xlsx',
+                'original_filename' => $rowData[4] ?? '',
+                'file_path' => $rowData[5] ?? '',
+                'file_size' => $rowData[6] ?? 0,
+                'image_url' => $rowData[8] ?? '', // Column I
+                'thumbnail' => $rowData[9] ?? '' // Column J
+            ];
+            
+            // Download and save image if URL exists
+            if (!empty($entry['image_url'])) {
+                $imageUrl = $entry['image_url'];
+                $imageExt = pathinfo(parse_url($imageUrl, PHP_URL_PATH), PATHINFO_EXTENSION);
+                $imagePath = 'uploads/images/' . uniqid() . '.' . ($imageExt ?: 'jpg');
+                
+                if (!file_exists('uploads/images')) {
+                    mkdir('uploads/images', 0755, true);
+                }
+                
+                // Download and save the image
+                $imageContent = @file_get_contents($imageUrl);
+                if ($imageContent !== false) {
+                    file_put_contents($imagePath, $imageContent);
+                    $entry['image_path'] = $imagePath;
+                    
+                    // Create thumbnail
+                    $thumbnailPath = 'uploads/thumbs/' . basename($imagePath);
+                    if (!file_exists('uploads/thumbs')) {
+                        mkdir('uploads/thumbs', 0755, true);
+                    }
+                    createThumbnail($imagePath, $thumbnailPath, 300, 200);
+                    $entry['thumbnail_path'] = $thumbnailPath;
+                }
+            }
+            
+            $data[] = $entry;
+        }
+    }
+    
+    return $data;
+}
+
 // Helper function to extract text from different file types
 function extractFileContent($filePath, $fileType) {
     $content = '';
+    $imagePath = '';
+    $thumbnailPath = '';
+    $excelData = [];
     
     switch($fileType) {
         case 'txt':
@@ -35,7 +104,6 @@ function extractFileContent($filePath, $fileType) {
             break;
             
         case 'docx':
-            // Requires phpword library
             if (class_exists('PhpOffice\PhpWord\IOFactory')) {
                 $phpWord = \PhpOffice\PhpWord\IOFactory::load($filePath);
                 $content = '';
@@ -56,7 +124,6 @@ function extractFileContent($filePath, $fileType) {
             break;
             
         case 'pdf':
-            // Requires pdfparser library
             if (class_exists('Smalot\PdfParser\Parser')) {
                 $parser = new \Smalot\PdfParser\Parser();
                 $pdf = $parser->parseFile($filePath);
@@ -66,24 +133,24 @@ function extractFileContent($filePath, $fileType) {
             
         case 'xlsx':
         case 'xls':
-            // Requires phpspreadsheet library
             if (class_exists('PhpOffice\PhpSpreadsheet\IOFactory')) {
-                $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($filePath);
-                $content = '';
-                foreach ($spreadsheet->getWorksheetIterator() as $worksheet) {
-                    foreach ($worksheet->getRowIterator() as $row) {
-                        $cellIterator = $row->getCellIterator();
-                        $cellIterator->setIterateOnlyExistingCells(true);
-                        foreach ($cellIterator as $cell) {
-                            $content .= $cell->getValue() . ' ';
-                        }
-                    }
+                $excelData = extractExcelContent($filePath);
+                if (!empty($excelData[0])) {
+                    $firstRow = $excelData[0];
+                    $content = $firstRow['description'] ?? '';
+                    $imagePath = $firstRow['image_path'] ?? '';
+                    $thumbnailPath = $firstRow['thumbnail_path'] ?? '';
                 }
             }
             break;
     }
     
-    return trim(substr($content, 0, 200)); // Return first 200 characters
+    return [
+        'content' => trim(substr($content, 0, 2000)),
+        'image_path' => $imagePath,
+        'thumbnail_path' => $thumbnailPath,
+        'excel_data' => $excelData
+    ];
 }
 
 // Handle file deletion
@@ -95,12 +162,16 @@ if (isset($_POST['delete_file'])) {
         $allBlogs = json_decode(file_get_contents($jsonFile), true) ?: [];
         
         if (isset($allBlogs[$index])) {
-            // Delete associated files if they exist
-            if (!empty($allBlogs[$index]['image'])) {
-                @unlink($allBlogs[$index]['image']);
-            }
-            if (!empty($allBlogs[$index]['file_path'])) {
-                @unlink($allBlogs[$index]['file_path']);
+            // Delete associated files
+            $file = $allBlogs[$index];
+            if (!empty($file['image'])) @unlink($file['image']);
+            if (!empty($file['file_path'])) @unlink($file['file_path']);
+            if (!empty($file['thumbnail'])) @unlink($file['thumbnail']);
+            if (!empty($file['excel_data'])) {
+                foreach ($file['excel_data'] as $excelRow) {
+                    if (!empty($excelRow['image_path'])) @unlink($excelRow['image_path']);
+                    if (!empty($excelRow['thumbnail_path'])) @unlink($excelRow['thumbnail_path']);
+                }
             }
             
             array_splice($allBlogs, $index, 1);
@@ -116,6 +187,7 @@ if (isset($_POST['upload']) && isset($_FILES['file'])) {
     $filename = $file['name'];
     $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
     $fileSize = $file['size'];
+    $description = $_POST['description'] ?? '';
     
     // Create uploads directory if it doesn't exist
     if (!file_exists('uploads')) {
@@ -133,6 +205,8 @@ if (isset($_POST['upload']) && isset($_FILES['file'])) {
         $filePath = 'uploads/' . $uniqueId . '.' . $ext;
         $content = '';
         $imagePath = '';
+        $thumbnailPath = '';
+        $excelData = [];
         
         // Move uploaded file
         move_uploaded_file($file['tmp_name'], $filePath);
@@ -148,24 +222,32 @@ if (isset($_POST['upload']) && isset($_FILES['file'])) {
             createThumbnail($filePath, $thumbnailPath, 300, 200);
         } else {
             // Extract content from non-image files
-            $content = extractFileContent($filePath, $ext);
+            $extracted = extractFileContent($filePath, $ext);
+            $content = $extracted['content'];
+            $imagePath = $extracted['image_path'];
+            $thumbnailPath = $extracted['thumbnail_path'];
+            $excelData = $extracted['excel_data'];
+            
+            // For Excel files, use first row data if description is empty
+            if (($ext === 'xlsx' || $ext === 'xls') && empty($description) && !empty($excelData[0]['description'])) {
+                $description = $excelData[0]['description'];
+            }
         }
         
         $blog = [
             "title" => $title,
-            "description" => $content,
+            "description" => !empty($description) ? $description : $content,
             "timestamp" => date('Y-m-d H:i:s'),
             "file_type" => $ext,
             "original_filename" => $filename,
             "file_path" => $filePath,
             "file_size" => $fileSize,
             "image" => $imagePath,
-            "thumbnail" => $thumbnailPath ?? ''
+            "thumbnail" => $thumbnailPath,
+            "excel_data" => $excelData
         ];
         
         $jsonFile = 'blog_data.json';
-
-
         $allBlogs = [];
         
         if (file_exists($jsonFile)) {
@@ -377,6 +459,17 @@ if (file_exists('blog_data.json')) {
             border: 1px solid #334155;
             width: 100%;
         }
+        textarea {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            font-family: inherit;
+        }
         input[type="submit"], button[type="submit"] {
             background-color: #3b82f6;
             color: white;
@@ -467,12 +560,56 @@ if (file_exists('blog_data.json')) {
         .file-actions .delete-btn:hover {
             color: #ef4444;
         }
+        .file-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .file-images img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
         .empty-state {
             text-align: center;
             padding: 40px;
             background-color: #1e293b;
             border-radius: 12px;
             color: #94a3b8;
+        }
+        .excel-preview {
+            margin-top: 15px;
+            border: 1px solid #334155;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .excel-table th, .excel-table td {
+            border: 1px solid #334155;
+            padding: 8px;
+            text-align: left;
+        }
+        .excel-table th {
+            background-color: #1e293b;
+            color: #f8fafc;
+        }
+        .excel-table tr:nth-child(even) {
+            background-color: #0f172a;
+        }
+        .excel-table tr:nth-child(odd) {
+            background-color: #1e293b;
+        }
+        .file-preview-image {
+            max-width: 100%;
+            max-height: 200px;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
         @media (max-width: 768px) {
             .header {
@@ -485,6 +622,10 @@ if (file_exists('blog_data.json')) {
             }
             .file-list {
                 grid-template-columns: 1fr;
+            }
+            .excel-table {
+                display: block;
+                overflow-x: auto;
             }
         }
     </style>
@@ -511,6 +652,7 @@ if (file_exists('blog_data.json')) {
         <h2>📁 Upload a File</h2>
         <form method="POST" enctype="multipart/form-data">
             <input type="file" name="file" required accept=".txt,.md,.json,.docx,.pdf,.jpg,.jpeg,.png,.gif,.xlsx,.xls" />
+            <textarea name="description" placeholder="File description (optional)"></textarea>
             <input type="submit" name="upload" value="Upload">
         </form>
         <?php if ($message): ?>
@@ -543,9 +685,13 @@ if (file_exists('blog_data.json')) {
                                 <?= htmlspecialchars($blog['title'] ?? 'Untitled') ?>
                             </a>
                         </h3>
+                        
                         <?php if (!empty($blog['thumbnail'])): ?>
-                            <img src="<?= htmlspecialchars($blog['thumbnail']) ?>" alt="Thumbnail" style="max-width: 100%; margin-bottom: 10px;">
+                            <img src="<?= htmlspecialchars($blog['thumbnail']) ?>" alt="Thumbnail" class="file-preview-image">
+                        <?php elseif (!empty($blog['image'])): ?>
+                            <img src="<?= htmlspecialchars($blog['image']) ?>" alt="Image" class="file-preview-image">
                         <?php endif; ?>
+                        
                         <p><strong>Description:</strong> <?= htmlspecialchars($blog['description'] ?? 'No description') ?></p>
                         <p><strong>Type:</strong> <?= strtoupper($blog['file_type'] ?? 'UNKNOWN') ?></p>
                         <p><strong>Size:</strong> 
@@ -565,6 +711,34 @@ if (file_exists('blog_data.json')) {
                             ?>
                         </p>
                         <p><strong>Uploaded:</strong> <?= isset($blog['timestamp']) ? date('M d, Y H:i', strtotime($blog['timestamp'])) : 'Unknown' ?></p>
+                        
+                        <?php if (!empty($blog['excel_data'])): ?>
+                            <div class="excel-preview">
+                                <h4>Excel Data:</h4>
+                                <table class="excel-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($blog['excel_data'] as $row): ?>
+                                            <tr>
+                                                <td><?= htmlspecialchars($row['title'] ?? '') ?></td>
+                                                <td><?= htmlspecialchars($row['description'] ?? '') ?></td>
+                                                <td>
+                                                    <?php if (!empty($row['image_path'])): ?>
+                                                        <img src="<?= htmlspecialchars($row['image_path']) ?>" style="max-width: 100px;">
+                                                    <?php endif; ?>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             </div>
