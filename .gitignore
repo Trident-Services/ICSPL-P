@@ -1,41 +1,85 @@
-# Ignore system files
+# =====================
+# System files
+# =====================
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Ignore editor folders (like VS Code)
+# =====================
+# Editor/IDE files
+# =====================
 .vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
 
-# Ignore vendor folder (if using Composer)
-vendor/
+# =====================
+# PHP / Composer
+# =====================
+vendor/           # Dependencies
+composer.phar     # Composer binary (downloadable)
+# Keep composer.json & composer.lock tracked!
 
-# Ignore environment and config files
+# =====================
+# Environment & Config
+# =====================
 .env
 *.env
+.env.local
+.env.development
+.env.production
 
-# Ignore log files
+# =====================
+# Logs
+# =====================
 *.log
 logs/
+router_debug.log
 
-# Ignore cache/temp files
+# =====================
+# Cache / Temp files
+# =====================
 cache/
 tmp/
 *.tmp
-
-# Ignore OS generated files
-*.swp
+*.cache
 *.bak
+*.swp
 
-# Ignore uploaded files (optional)
+# =====================
+# Uploads / Storage
+# =====================
 uploads/
 *.zip
+*.tar
+*.tar.gz
 
-# Ignore node_modules (if you're using frontend tooling like npm/yarn)
+# =====================
+# Frontend builds
+# =====================
 node_modules/
-
-# Ignore compiled CSS/JS if using build tools
 dist/
 build/
+public/js/*.min.js
+public/css/*.min.css
 
-#router_debug logs
-router_debug.log
+# =====================
+# Test / Coverage
+# =====================
+coverage/
+phpunit.xml.cache
+/.phpunit.result.cache
+
+# =====================
+# Database dumps
+# =====================
+*.sqlite
+*.sql
+*.db
+
+# =====================
+# Docker
+# =====================
+docker-compose.override.yml
+.docker/
+.dockerignore

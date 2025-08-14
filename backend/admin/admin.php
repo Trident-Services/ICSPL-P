@@ -256,7 +256,7 @@ $result_logs = $conn->query($sql_logs);
     </table>
 </div>
 
-<h2>🗕️ Admin Login Logs</h2>
+<h2>Admin Login Logs</h2>
 <div class="search-container">
     <input type="date" id="logDatePicker" />
 </div>

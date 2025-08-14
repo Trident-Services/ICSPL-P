@@ -92,8 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="reset-box">
         <h2>Reset Your Password</h2>
         <form method="post">
-            <input type="password" name="password" placeholder="🔒 New Password" required>
-            <input type="password" name="confirm_password" placeholder="🔒 Confirm Password" required>
+            <input type="password" name="password" placeholder="🔒 New Password" required autocomplete="on">
+            <input type="password" name="confirm_password" placeholder="🔒 Confirm Password" required >
             <button type="submit">Update Password</button>
         </form>
         <?php if ($message) echo "<div class='message'>$message</div>"; ?>

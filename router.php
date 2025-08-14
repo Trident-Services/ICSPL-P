@@ -42,6 +42,10 @@ $routes = [
     '/services'          => '/public/pages/services.html',
     '/thank-you'         => '/public/pages/thank-you.html',
     '/error'             => '/public/pages/error.html',
+
+    //upload Files:
+    '/blog'             => '/blog_data.json',
+
 ];
 
 // Handle routes to PHP/HTML pages

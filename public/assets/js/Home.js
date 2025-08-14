@@ -77,46 +77,46 @@
         document.getElementById('year').textContent = new Date().getFullYear();
       });
       
-      // Blog slider functionality
-      let currentSlide = 0;
-      const slides = document.querySelectorAll('.blog-slide');
-      const indicators = document.querySelectorAll('.slide-indicator');
+      // // Blog slider functionality
+      // let currentSlide = 0;
+      // const slides = document.querySelectorAll('.blog-slide');
+      // const indicators = document.querySelectorAll('.slide-indicator');
       
-      function updateSlider() {
-        const slideWidth = slides[0].offsetWidth;
-        document.getElementById('blog-slides').style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      // function updateSlider() {
+      //   const slideWidth = slides[0].offsetWidth;
+      //   document.getElementById('blog-slides').style.transform = `translateX(-${currentSlide * slideWidth}px)`;
         
-        // Update indicators
-        indicators.forEach((indicator, index) => {
-          if (index === currentSlide) {
-            indicator.classList.add('active');
-          } else {
-            indicator.classList.remove('active');
-          }
-        });
-      }
+      //   // Update indicators
+      //   indicators.forEach((indicator, index) => {
+      //     if (index === currentSlide) {
+      //       indicator.classList.add('active');
+      //     } else {
+      //       indicator.classList.remove('active');
+      //     }
+      //   });
+      // }
       
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlider();
-      }
+      // function nextSlide() {
+      //   currentSlide = (currentSlide + 1) % slides.length;
+      //   updateSlider();
+      // }
       
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlider();
-      }
+      // function prevSlide() {
+      //   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      //   updateSlider();
+      // }
       
-      function goToSlide(index) {
-        currentSlide = index;
-        updateSlider();
-      }
+      // function goToSlide(index) {
+      //   currentSlide = index;
+      //   updateSlider();
+      // }
       
-      // Auto slide every 5 seconds
-      setInterval(nextSlide, 5000);
+      // // Auto slide every 5 seconds
+      // setInterval(nextSlide, 5000);
       
-      // Initialize slider
-      window.addEventListener('load', updateSlider);
-      window.addEventListener('resize', updateSlider);
+      // // Initialize slider
+      // window.addEventListener('load', updateSlider);
+      // window.addEventListener('resize', updateSlider);
       
 // fetch('blog_data.json')
 //   .then(response => response.json())
