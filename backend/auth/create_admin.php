@@ -1,5 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "root", "icspl");
+// ✅ Use DB connection from includes/db_connection.php
+$conn = require __DIR__ . "/../../includes/db_connection.php";
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

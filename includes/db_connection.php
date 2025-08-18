@@ -11,11 +11,13 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     }
 }
 
+
+
 // Fetch DB credentials from environment
-$DB_HOST = getenv('DB_HOST') ?: ($_ENV['DB_HOST'] ?? 'localhost');
-$DB_USER = getenv('DB_USER') ?: ($_ENV['DB_USER'] ?? 'root');
+$DB_HOST = getenv('DB_HOST') ?: ($_ENV['DB_HOST'] ?? '');
+$DB_USER = getenv('DB_USER') ?: ($_ENV['DB_USER'] ?? '');
 $DB_PASS = getenv('DB_PASS') ?: ($_ENV['DB_PASS'] ?? '');
-$DB_NAME = getenv('DB_NAME') ?: ($_ENV['DB_NAME'] ?? 'icspl');
+$DB_NAME = getenv('DB_NAME') ?: ($_ENV['DB_NAME'] ?? '');
 
 // Create secure MySQLi connection
 $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
@@ -31,4 +33,7 @@ if ($conn->connect_error) {
 $conn->set_charset("utf8mb4");
 
 // Optional: set strict SQL mode for security
-$conn->query("SET SESSION sql_mode='STRICT_ALL_TABLES'");
+// $conn->query("SET SESSION sql_mode='STRICT_ALL_TABLES'");
+// var_dump($DB_HOST, $DB_USER, $DB_NAME);
+// exit;
+return ($conn);

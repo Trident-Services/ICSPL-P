@@ -1,9 +1,11 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "root", "icspl");
 
-// Session timeout
-$timeout_duration = 1200;
+// ✅ Use your reusable DB connection
+$conn = require __DIR__ . "/../../includes/db_connection.php";
+
+// --- Session timeout ---
+$timeout_duration = 1200; // 20 min
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
     session_unset();
     session_destroy();
@@ -12,12 +14,13 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) >
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 
+// --- Require admin login ---
 if (!isset($_SESSION["admin"])) {
     header("Location: /login");
     exit();
 }
 
-// Add admin user
+// --- Add admin user ---
 $add_success = $add_error = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add_admin'])) {
     $email = trim($_POST['email']);
@@ -29,36 +32,45 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add_admin'])) {
         $add_error = "Password must be at least 6 characters.";
     } else {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $conn->prepare("INSERT INTO admin_users (email, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $email, $hashedPassword);
-        if ($stmt->execute()) {
-            $add_success = "Admin user added successfully.";
-        } else {
-            $add_error = "Email already exists or failed to add.";
+
+        try {
+            $stmt = $conn->prepare("INSERT INTO admin_users (email, password) VALUES (?, ?)");
+            $stmt->bind_param("ss", $email, $hashedPassword);
+
+            if ($stmt->execute()) {
+                $add_success = "✅ Admin user added successfully.";
+            } else {
+                $add_error = "⚠️ Email already exists or failed to add.";
+            }
+            $stmt->close();
+        } catch (Exception $e) {
+            error_log("Add Admin Error: " . $e->getMessage());
+            $add_error = "Something went wrong. Try again.";
         }
-        $stmt->close();
     }
 }
 
-// Delete admin user
+// --- Delete admin user ---
 if (isset($_GET['delete'])) {
     $delete_id = intval($_GET['delete']);
 
     if (isset($_SESSION["admin_id"]) && $_SESSION["admin_id"] == $delete_id) {
-        $add_error = "You cannot delete your own account.";
+        $add_error = "⚠️ You cannot delete your own account.";
     } else {
         $stmt = $conn->prepare("DELETE FROM admin_users WHERE id = ?");
         $stmt->bind_param("i", $delete_id);
         $stmt->execute();
         $stmt->close();
+
         header("Location: /admin-users");
         exit();
     }
 }
 
-// Fetch admin users
+// --- Fetch admin users ---
 $result = $conn->query("SELECT id, email FROM admin_users");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

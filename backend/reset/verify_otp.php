@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "root", "icspl");
+$conn = require __DIR__ . "/../../includes/db_connection.php";
 
 $message = "";
 

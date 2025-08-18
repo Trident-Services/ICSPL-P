@@ -1,6 +1,7 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "root", "icspl");
+// ✅ Use DB connection from includes/db_connection.php
+$conn = require __DIR__ . "/../../includes/db_connection.php";
 
 if (!isset($_SESSION['reset_email']) || !isset($_SESSION['otp_verified'])) {
     header("Location: /forgot-password");
@@ -31,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,24 +48,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         .reset-box {
             background: white;
-            padding: 40px;
+            padding: 60px;
             border-radius: 16px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
         }
         .reset-box h2 {
             text-align: center;
             margin-bottom: 25px;
             color: #333;
         }
-        input[type="password"] {
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        input[type="password"], input[type="text"] {
             width: 100%;
-            padding: 12px;
+            padding: 10px 10px 10px 1px;
             border: 1px solid #ccc;
             border-radius: 8px;
-            margin-bottom: 20px;
             font-size: 16px;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 14px;
+            color: #667eea;
+            user-select: none;
         }
         button {
             width: 100%;
@@ -91,12 +104,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="reset-box">
         <h2>Reset Your Password</h2>
-        <form method="post">
-            <input type="password" name="password" placeholder="🔒 New Password" required autocomplete="on">
-            <input type="password" name="confirm_password" placeholder="🔒 Confirm Password" required >
+        <form method="post" autocomplete="off">
+            <div class="input-wrapper">
+                <input type="password" name="password" id="password" placeholder="🔒 New Password" required autocomplete="new-password">
+                <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+            </div>
+            <div class="input-wrapper">
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="🔒 Confirm Password" required autocomplete="new-password">
+                <span class="toggle-password" onclick="togglePassword('confirm_password')">👁️</span>
+            </div>
             <button type="submit">Update Password</button>
         </form>
         <?php if ($message) echo "<div class='message'>$message</div>"; ?>
     </div>
+
+    <script>
+        function togglePassword(fieldId) {
+            const input = document.getElementById(fieldId);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>

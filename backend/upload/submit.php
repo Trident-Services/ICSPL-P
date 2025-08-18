@@ -1,6 +1,6 @@
 <?php
 // Connect to MySQL
-$conn = mysqli_connect("localhost", "root", "root", "icspl");
+$conn = require __DIR__ . "/../../includes/db_connection.php";
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

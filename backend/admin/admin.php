@@ -22,11 +22,8 @@ if (isset($_GET["logout"])) {
     exit();
 }
 
-// DB Connection
-$conn = new mysqli("localhost", "root", "root", "icspl");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// ✅ Use DB connection from includes/db_connection.php
+$conn = require __DIR__ . "/../../includes/db_connection.php";
 
 // Fetch submissions
 $sql = "SELECT id, name, phone_number, gmail, services, sectors, additional_message FROM users";

@@ -12,11 +12,8 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) >
 $_SESSION['last_activity'] = time(); // Update last activity time
 
 // Database connection
-$conn = new mysqli("localhost", "root", "root", "icspl");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+// ✅ Use DB connection from includes/db_connection.php
+$conn = require __DIR__ . "/../../includes/db_connection.php";
 $error = "";
 
 // Show session timeout message if redirected

@@ -7,7 +7,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$conn = new mysqli("localhost", "root", "root", "icspl");
+// ✅ Use DB connection from includes/db_connection.php
+$conn = require __DIR__ . "/../../includes/db_connection.php";
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

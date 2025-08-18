@@ -9,9 +9,101 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.8/glider.min.css">  
     <link rel="stylesheet" href="/assets/css/services.css">
+    <style>
+        /* Header-specific CSS from about.html */
+        :root {
+            --primary-blue: #60A5FA;
+            --secondary-accent: #10B981;
+            --dark-bg: #0a0a0a;
+            --content-bg: rgba(20, 20, 20, 0.95);
+            --card-bg: rgba(30, 30, 30, 0.85);
+            --text-primary: #ffffff;
+            --text-secondary: #e5e7eb;
+            --text-tertiary: #9ca3af;
+            --border-color: #333333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header-shadow {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        .logo {
+            height: 90px;
+            width: auto;
+            padding: 6px;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 6px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            text-shadow: 0 0 8px var(--primary-blue);
+        }
+
+        .nav-link.active {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-accent));
+            bottom: 0;
+            left: 0;
+            transition: width 0.4s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        #mobile-menu {
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            background-color: var(--card-bg);
+        }
+
+        #mobile-menu.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                height: 70px;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body class="scroll-smooth">
-    <!-- Header / Navigation - Matching about.html style -->
+    <!-- Header / Navigation (from about.html) -->
     <header class="fixed w-full bg-black text-white z-50 header-shadow">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
@@ -20,24 +112,24 @@
                 </a>
             </div>
             <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
             <nav class="hidden md:flex space-x-6 text-sm md:text-base">
-                <a href="/" class="nav-link text-gray-300">Home</a>
-                <a href="/pages/about.html" class="nav-link text-gray-300">About</a>
-                <a href="/pages/services.html" class="nav-link text-white font-medium">Services</a>
-                <a href="/pages/sectors.html" class="nav-link text-gray-300">Sectors</a>
-                <a href="/pages/contact.html" class="nav-link text-gray-300">Contact</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/pages/about.html" class="nav-link">About</a>
+                <a href="/pages/services.html" class="nav-link active">Services</a>
+                <a href="/pages/sectors.html" class="nav-link">Sectors</a>
+                <a href="/pages/contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
         <div id="mobile-menu" class="md:hidden px-4 bg-gray-900">
-            <a href="../index.html" class="block py-3 border-b border-gray-800 text-gray-300 hover:text-white">Home</a>
-            <a href="./about.html" class="block py-3 border-b border-gray-800 text-gray-300 hover:text-white">About</a>
-            <a href="./services.html" class="block py-3 border-b border-gray-800 text-white font-medium">Services</a>
-            <a href="./sectors.html" class="block py-3 border-b border-gray-800 text-gray-300 hover:text-white">Sectors</a>
-            <a href="./contact.html" class="block py-3 text-gray-300 hover:text-white">Contact</a>
+            <a href="/" class="block py-3 border-b border-gray-800 nav-link">Home</a>
+            <a href="/pages/about.html" class="block py-3 border-b border-gray-800 nav-link">About</a>
+            <a href="/pages/services.html" class="block py-3 border-b border-gray-800 nav-link active">Services</a>
+            <a href="/pages/sectors.html" class="block py-3 border-b border-gray-800 nav-link">Sectors</a>
+            <a href="/pages/contact.html" class="block py-3 nav-link">Contact</a>
         </div>
     </header>
 

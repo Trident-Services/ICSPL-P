@@ -1,13 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Thank You</title>
-  <meta http-equiv="refresh" content="3; url=/index.html" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - ICSPL</title>
+  <!-- Auto redirect after 3s -->
+  <meta http-equiv="refresh" content="3; url=/" />
+
+  <!-- Tailwind & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-blue: #60A5FA;
+      --secondary-accent: #10B981;
+      --text-primary: #ffffff;
+      --text-secondary: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(45deg, #0a0a0a, #1f2937, #0a0a0a);
+      background-size: 200% 200%;
+      animation: gradientShift 15s ease infinite;
+      color: var(--text-primary);
+      overflow: hidden;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Background gradient animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Card with 3D tilt */
+    .card {
+      background: rgba(30, 30, 30, 0.9);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.3s ease;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    /* Animated heading */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+      animation: text3D 2s ease-in-out infinite;
+    }
+
+    @keyframes text3D {
+      0%, 100% { transform: translateZ(20px) rotateX(0deg); }
+      50% { transform: translateZ(20px) rotateX(10deg) rotateY(10deg); }
+    }
+
+    /* Paragraph animations */
+    .card p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin: 1rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInBounce 1s ease forwards;
+    }
+
+    .card p:nth-of-type(1) { animation-delay: 0.5s; }
+    .card p:nth-of-type(2) { animation-delay: 1s; }
+
+    @keyframes fadeInBounce {
+      0% { opacity: 0; transform: translateY(20px); }
+      60% { opacity: 1; transform: translateY(-5px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Typewriter effect */
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid var(--primary-blue);
+      animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: var(--primary-blue); }
+    }
+
+    /* Button */
+    .flip-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary-blue);
+      color: var(--text-primary);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.6s ease, background 0.3s ease;
+      box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+    }
+
+    .flip-button:hover {
+      transform: rotateX(360deg);
+      background: var(--secondary-accent);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+    }
+
+    /* Particle effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particles::before,
+    .particles::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(96, 165, 250, 0.3);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in-out;
+    }
+
+    .particles::before { top: 20%; left: 10%; animation-delay: 0s; }
+    .particles::after { top: 80%; left: 80%; animation-delay: 5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+      50% { transform: translateY(-50px) scale(1.5); opacity: 0.8; }
+    }
+  </style>
+
+  <script>
+    // 3D tilt effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const card = document.querySelector('.card');
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      });
+    });
+  </script>
 </head>
-<body style="background-color: black; color: white; text-align: center; padding-top: 100px;">
-  <h1>Thank you for contacting us!</h1>
-  <p>We will get back to you shortly.</p>
-  <p>You will be redirected to the homepage in a few seconds.</p>
-  <a href="/" style="color: lightblue;">Return to Homepage</a>
+<body>
+  <div class="particles"></div>
+
+  <div class="card">
+    <h1>Thank you for contacting us!</h1>
+    <p>We will get back to you shortly.</p>
+    <p class="typewriter">You will be redirected to the homepage in a few seconds.</p>
+    <a href="/" class="flip-button">Return to Homepage</a>
+  </div>
 </body>
 </html>

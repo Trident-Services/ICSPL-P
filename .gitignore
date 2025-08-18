@@ -17,7 +17,7 @@ desktop.ini
 # PHP / Composer
 # =====================
 vendor/           # Dependencies
-composer.phar     # Composer binary (downloadable)
+composer.phar     # Composer binary
 # Keep composer.json & composer.lock tracked!
 
 # =====================
@@ -28,6 +28,8 @@ composer.phar     # Composer binary (downloadable)
 .env.local
 .env.development
 .env.production
+.env.testing
+*.env.*.local
 
 # =====================
 # Logs
@@ -60,6 +62,7 @@ uploads/
 node_modules/
 dist/
 build/
+/.vite
 public/js/*.min.js
 public/css/*.min.css
 

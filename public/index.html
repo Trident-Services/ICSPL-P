@@ -16,17 +16,354 @@
   <!-- Stylesheets -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="/assets/css/Home.css?v=1.1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #60A5FA; /* Softer blue from about.html */
+      --secondary-accent: #10B981; /* Secondary accent from about.html */
+      --dark-bg: #0a0a0a;
+      --content-bg: rgba(20, 20, 20, 0.95);
+      --card-bg: rgba(30, 30, 30, 0.85);
+      --text-primary: #ffffff;
+      --text-secondary: #e5e7eb;
+      --text-tertiary: #9ca3af;
+      --border-color: #333333;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-primary);
+      scroll-behavior: smooth;
+    }
+
+    /* Header Styles (from about.html) */
+    .header-shadow {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo {
+      height: 90px;
+      width: auto;
+      padding: 6px;
+      border-radius: 6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+      padding-bottom: 6px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+      transform: translateY(-2px);
+      text-shadow: 0 0 8px var(--primary-blue);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--primary-blue), var(--secondary-accent));
+      bottom: 0;
+      left: 0;
+      transition: width 0.4s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    #mobile-menu {
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      background-color: var(--card-bg);
+    }
+
+    #mobile-menu.show {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    /* Section Styles */
+    section {
+      scroll-margin-top: 100px;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    /* Card Styles */
+    .content-box {
+      background: linear-gradient(145deg, var(--content-bg), var(--card-bg));
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .content-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(59,130,246,0.2);
+    }
+
+    /* Blog Carousel */
+    .blog-carousel {
+      position: relative;
+      max-width: 1200px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 0.875rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    .blog-wrapper {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .blog-slide {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      background: linear-gradient(120deg, #1e293b, #0f172a);
+    }
+
+    .blog-slide img {
+      width: 60%;
+      height: auto;
+      border-radius: 0.75rem;
+      margin-right: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease;
+    }
+
+    .blog-slide img:hover {
+      transform: scale(1.03);
+    }
+
+    .blog-content {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 1.25rem;
+      border-radius: 0.625rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .blog-content h3 {
+      font-size: 1.625rem;
+      margin-bottom: 0.75rem;
+      color: #38bdf8;
+    }
+
+    .blog-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-content small {
+      display: block;
+      margin-bottom: 1.125rem;
+      opacity: 0.7;
+    }
+
+    .blog-content a {
+      display: inline-block;
+      padding: 0.625rem 1.125rem;
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      color: white;
+      text-decoration: none;
+      border-radius: 0.375rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .blog-content a:hover {
+      background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 1.375rem;
+      padding: 0.75rem;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 2;
+      transition: 0.3s;
+    }
+
+    .arrow:hover {
+      background: rgba(56, 189, 248, 0.8);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .arrow.left { left: 0.75rem; }
+    .arrow.right { right: 0.75rem; }
+
+    .dots {
+      text-align: center;
+      margin-top: 0.875rem;
+    }
+
+    .dot {
+      height: 0.75rem;
+      width: 0.75rem;
+      background-color: #64748b;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 0.375rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background-color: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.6);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      padding: 1.25rem;
+    }
+
+    .modal-content {
+      background: #1e293b;
+      border-radius: 0.75rem;
+      max-width: 800px;
+      padding: 1.5625rem;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      animation: fadeIn 0.4s ease;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+
+    .modal-content p {
+      line-height: 1.6;
+    }
+
+    .close-btn {
+      display: inline-block;
+      margin-top: 0.9375rem;
+      padding: 0.625rem 0.9375rem;
+      background: #ef4444;
+      border: none;
+      border-radius: 0.375rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .close-btn:hover {
+      background: #dc2626;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer Styles */
+    .footer-logo {
+      height: 35px;
+      width: auto;
+      padding: 3px;
+      border-radius: 4px;
+      opacity: 0.95;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .footer-logo:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    .social-icon {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      color: var(--primary-blue);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .logo {
+        height: 70px;
+      }
+
+      .nav-link {
+        font-size: 0.9rem;
+      }
+
+      .content-box {
+        padding: 1.5rem;
+      }
+
+      .blog-slide {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .blog-slide img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      .arrow {
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="scroll-smooth">
-  <!-- Header / Navigation -->
-  <header class="fixed w-full text-white z-50">
+  <!-- Header / Navigation (from about.html) -->
+  <header class="fixed w-full bg-black text-white z-50 header-shadow">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center">
-        <a href="/public/index.html">
-          <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="logo mr-2" style="width:550px" height="auto" />
+        <a href="/">
+          <img src="/assets/images/Header--Transparent.png" alt="ICSPL Logo" class="logo mr-2" />
         </a>
       </div>
       <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle navigation menu">
@@ -35,19 +372,19 @@
         </svg>
       </button>
       <nav class="hidden md:flex space-x-6 text-sm md:text-base">
-        <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
-        <a href="/pages/about.html" class="hover:text-gray-300 transition-colors">About</a>
-        <a href="/pages/services.html" class="hover:text-gray-300 transition-colors">Services</a>
-        <a href="/pages/sectors.html" class="hover:text-gray-300 transition-colors">Sectors</a>
-        <a href="/pages/contact.html" class="hover:text-gray-300 transition-colors">Contact</a>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+        <a href="/pages/services.html" class="nav-link">Services</a>
+        <a href="/pages/sectors.html" class="nav-link">Sectors</a>
+        <a href="/pages/contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-      <a href="/public/index.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Home</a>
-      <a href="/public/pages/about.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">About</a>
-      <a href="/public/pages/services.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Services</a>
-      <a href="/public/pages/sectors.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Sectors</a>
-      <a href="/public/pages/contact.html" class="block py-2 hover:bg-gray-900 px-2 rounded transition-colors">Contact</a>
+    <div id="mobile-menu" class="md:hidden px-4 bg-gray-900">
+      <a href="/" class="block py-3 border-b border-gray-800 nav-link">Home</a>
+      <a href="/pages/about.html" class="block py-3 border-b border-gray-800 nav-link">About</a>
+      <a href="/pages/services.html" class="block py-3 border-b border-gray-800 nav-link">Services</a>
+      <a href="/pages/sectors.html" class="block py-3 border-b border-gray-800 nav-link">Sectors</a>
+      <a href="/pages/contact.html" class="block py-3 nav-link">Contact</a>
     </div>
   </header>
 
@@ -72,7 +409,7 @@
           <p class="text-lg text-gray-300 mb-4">ICSPL, based in Kurnool, Andhra Pradesh, excels in engineering design and technology integration. We empower public, private, and defense sectors by delivering systems that drive efficiency, safety, and sustainability.</p>
           <p class="text-lg text-gray-300">Our team of experts combines technical excellence with innovative thinking to provide cutting-edge solutions tailored to our clients' unique needs.</p>
         </div>
-        <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+        <div class="content-box p-8">
           <h3 class="text-xl font-semibold mb-4">Our Mission</h3>
           <p class="text-gray-300 mb-4">To deliver intelligent, sustainable solutions that transform industries and improve lives through innovative engineering and technology integration.</p>
           <h3 class="text-xl font-semibold mb-4">Our Vision</h3>
@@ -84,6 +421,7 @@
 
   <!-- Blog Carousel -->
   <div class="blog-carousel">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Latest Updates</h2>
     <button class="arrow left">&#8249;</button>
     <div class="blog-wrapper" id="blog-wrapper"></div>
     <button class="arrow right">&#8250;</button>
@@ -114,107 +452,99 @@
     </div>
   </div>
 
+  <!-- Contact Section -->
   <section id="contact" class="px-4 py-20 bg-gray-900">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
-    <p class="mb-8 text-center max-w-2xl mx-auto text-gray-400">
-      We'd love to hear from you! Choose an option below.
-    </p>
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
+      <p class="mb-8 text-center max-w-2xl mx-auto text-gray-400">
+        We'd love to hear from you! Choose an option below.
+      </p>
 
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <!-- Left: Contact Button -->
-      <div class="text-center md:text-left">
-        <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
-        <p class="mb-6 text-gray-400">
-          Have questions? You can reach us using the link below.
-        </p>
-        <a href="/pages/contact.html"
-           class="inline-block bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
-           Go to Contact Page
-        </a>
-      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Left: Contact Button -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+          <p class="mb-6 text-gray-400">
+            Have questions? You can reach us using the link below.
+          </p>
+          <a href="/pages/contact.html"
+             class="inline-block bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+             Go to Contact Page
+          </a>
+        </div>
 
-      <!-- Right: Contact Information -->
-      <div class="p-8 rounded-lg border border-gray-800">
-        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-        <div class="space-y-4">
-          <!-- Address -->
-          <div class="flex items-start">
-            <div class="text-gray-500 mr-4 mt-1">
-              <!-- Address Icon -->
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+        <!-- Right: Contact Information -->
+        <div class="content-box p-8">
+          <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+          <div class="space-y-4">
+            <!-- Address -->
+            <div class="flex items-start">
+              <div class="text-gray-500 mr-4 mt-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Address</h4>
+                <p class="text-gray-400">
+                  26/31-A, Ganigalli street, opposite Small Market, Kurnool-518001, Andhra Pradesh, India
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-medium">Address</h4>
-              <p class="text-gray-400">
-                Intelligent Connect Solutions Pvt. Ltd., Kurnool, Andhra Pradesh – 518001, India
-              </p>
-            </div>
-          </div>
 
-          <!-- Email -->
-          <div class="flex items-start">
-            <div class="text-gray-500 mr-4 mt-1">
-              <!-- Email Icon -->
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
+            <!-- Email -->
+            <div class="flex items-start">
+              <div class="text-gray-500 mr-4 mt-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Email</h4>
+                <p class="text-gray-400">services@icspl-intl.com</p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-medium">Email</h4>
-              <p class="text-gray-400">trident@icspl.com</p>
-            </div>
-          </div>
 
-          <!-- Phone -->
-          <div class="flex items-start">
-            <div class="text-gray-500 mr-4 mt-1">
-              <!-- Phone Icon -->
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+            <!-- Phone -->
+            <div class="flex items-start">
+              <div class="text-gray-500 mr-4 mt-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Phone</h4>
+                <p class="text-gray-400">+918121522855</p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-medium">Phone</h4>
-              <p class="text-gray-400">+91-XXXXXXXXXX</p>
-            </div>
-          </div>
 
-          <!-- Social -->
-          <div class="flex items-start">
-            <div class="text-gray-500 mr-4 mt-1">
-              <!-- Globe Icon -->
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-medium">Follow Us</h4>
-              <div class="flex space-x-4 mt-2">
-                <!-- Social icons -->
-               <div class="flex space-x-4 mt-2">
-                 <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-linkedin w-6 h-6"></i></a>
-                 <a href="#" class="text-blue-300 hover:text-blue-200"><i class="fab fa-twitter w-6 h-6"></i></a>
-                 <a href="#" class="text-blue-500 hover:text-blue-400"><i class="fab fa-facebook w-6 h-6"></i></a>
-               </div>
+            <!-- Social -->
+            <div class="flex items-start">
+              <div class="text-gray-500 mr-4 mt-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium">Follow Us</h4>
+                <div class="flex space-x-4 mt-2">
+                  <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-linkedin w-6 h-6"></i></a>
+                  <a href="#" class="text-blue-300 hover:text-blue-200"><i class="fab fa-twitter w-6 h-6"></i></a>
+                  <a href="#" class="text-blue-500 hover:text-blue-400"><i class="fab fa-facebook w-6 h-6"></i></a>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
   <footer class="p-8 bg-black text-white mt-20 border-t border-gray-900">
@@ -227,13 +557,13 @@
         </div>
       </div>
       <div class="flex space-x-6">
-        <a href="#" class="hover:text-white transition-colors">
+        <a href="#" class="social-icon hover:text-white transition-colors">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
         </a>
-        <a href="#" class="hover:text-white transition-colors">
+        <a href="#" class="social-icon hover:text-white transition-colors">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
-        <a href="#" class="hover:text-white transition-colors">
+        <a href="#" class="social-icon hover:text-white transition-colors">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
       </div>
@@ -243,11 +573,29 @@
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="/assets/js/Home.js?v=1.1"></script>
-  
-  <!-- Blog Carousel Script -->
+  <!-- Scripts -->
+  <script src="/assets/js/Home.js"></script>
   <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('show');
+    }
+
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Blog Carousel Script
     (async function () {
       const res = await fetch('/blog', { cache: 'no-store' });
       if (!res.ok) return;
@@ -272,7 +620,7 @@
         const fullContent = item.fullContent || desc;
 
         slide.innerHTML = `
-          ${img ? `<img src="${img}" alt="${title}">` : '<div style="width:60%;height:300px;background:#444;border-radius:10px;margin-right:25px"></div>'}
+          ${img ? `<img src="${img}" alt="${title}">` : '<div style="width:60%;height:300px;background:#444;border-radius:12px;margin-right:25px"></div>'}
           <div class="blog-content">
             <h3>${title}</h3>
             <p>${desc}</p>

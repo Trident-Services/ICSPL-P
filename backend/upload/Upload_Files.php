@@ -6,7 +6,7 @@ $timeout_duration = 1200; // 20 minutes
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
     session_unset();
     session_destroy();
-    header("Location: backend/login.php?timeout=1");
+    header("Location: login.php?timeout=1");
     exit();
 }
 $_SESSION['LAST_ACTIVITY'] = time();
@@ -22,72 +22,174 @@ if (isset($_GET["logout"])) {
     exit();
 }
 
+// Ensure Composer autoloader is included
+require_once 'vendor/autoload.php';
+
 $message = "";
+
+// Extract content from CSV files
+function extractCsvContent($filePath) {
+    $data = [];
+    if (($handle = fopen($filePath, 'r')) !== false) {
+        $headers = fgetcsv($handle); // Read header row
+        while (($rowData = fgetcsv($handle)) !== false) {
+            if (!empty($rowData[0])) { // Ensure title column (A) is not empty
+                $entry = [
+                    'title' => $rowData[0] ?? '',
+                    'description' => $rowData[1] ?? '',
+                    'timestamp' => $rowData[2] ?? date('Y-m-d H:i:s'),
+                    'file_type' => $rowData[3] ?? 'csv',
+                    'original_filename' => $rowData[4] ?? '',
+                    'file_path' => $rowData[5] ?? '',
+                    'file_size' => $rowData[6] ?? 0,
+                    'image_url' => $rowData[8] ?? '',
+                    'thumbnail' => $rowData[9] ?? ''
+                ];
+                
+                if (!empty($entry['image_url'])) {
+                    $imageUrl = trim($entry['image_url']);
+                    error_log("Processing image URL: $imageUrl");
+                    if (filter_var($imageUrl, FILTER_VALIDATE_URL) && preg_match('/\.(jpg|jpeg|png|gif)$/i', $imageUrl)) {
+                        $imageExt = pathinfo(parse_url($imageUrl, PHP_URL_PATH), PATHINFO_EXTENSION);
+                        $imagePath = 'Uploads/images/' . uniqid() . '.' . ($imageExt ?: 'jpg');
+                        
+                        if (!file_exists('Uploads/images')) {
+                            mkdir('Uploads/images', 0755, true);
+                            error_log("Created directory: Uploads/images");
+                        }
+                        
+                        $context = stream_context_create([
+                            'http' => [
+                                'timeout' => 30, // Increased timeout
+                                'header' => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+                            ]
+                        ]);
+                        $imageContent = @file_get_contents($imageUrl, false, $context); // Suppress warnings
+                        if ($imageContent !== false) {
+                            if (file_put_contents($imagePath, $imageContent)) {
+                                $entry['image_path'] = $imagePath;
+                                $thumbnailPath = 'Uploads/thumbs/' . basename($imagePath);
+                                if (!file_exists('Uploads/thumbs')) {
+                                    mkdir('Uploads/thumbs', 0755, true);
+                                    error_log("Created directory: Uploads/thumbs");
+                                }
+                                if (createThumbnail($imagePath, $thumbnailPath, 300, 200)) {
+                                    $entry['thumbnail_path'] = $thumbnailPath;
+                                } else {
+                                    error_log("Thumbnail creation failed for: $imagePath");
+                                    $entry['thumbnail_path'] = '';
+                                }
+                            } else {
+                                error_log("Failed to save image to: $imagePath");
+                            }
+                        } else {
+                            error_log("Failed to download image from: $imageUrl - Check allow_url_fopen or network");
+                        }
+                    } else {
+                        error_log("Invalid image URL: $imageUrl");
+                    }
+                }
+                
+                $data[] = $entry;
+            }
+        }
+        fclose($handle);
+    } else {
+        error_log("Failed to open CSV file: $filePath");
+    }
+    return $data;
+}
 
 // Improved Excel content extraction function
 function extractExcelContent($filePath) {
-    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($filePath);
-    $worksheet = $spreadsheet->getActiveSheet();
-    $data = [];
-    
-    // Get highest row and column
-    $highestRow = $worksheet->getHighestRow();
-    $highestColumn = $worksheet->getHighestColumn();
-    $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn);
-    
-    // Process each row (skip header row)
-    for ($row = 2; $row <= $highestRow; $row++) {
-        $rowData = [];
-        for ($col = 1; $col <= $highestColumnIndex; $col++) {
-            $cell = $worksheet->getCellByColumnAndRow($col, $row);
-            $rowData[] = $cell->getFormattedValue();
-        }
+    try {
+        error_log("Starting Excel processing for: $filePath");
+        $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($filePath);
+        $worksheet = $spreadsheet->getActiveSheet();
+        $data = [];
         
-        // Only process rows with data in title column (A)
-        if (!empty($rowData[0])) {
-            $entry = [
-                'title' => $rowData[0] ?? '', // Column A
-                'description' => $rowData[1] ?? '', // Column B
-                'timestamp' => $rowData[2] ?? date('Y-m-d H:i:s'),
-                'file_type' => $rowData[3] ?? 'xlsx',
-                'original_filename' => $rowData[4] ?? '',
-                'file_path' => $rowData[5] ?? '',
-                'file_size' => $rowData[6] ?? 0,
-                'image_url' => $rowData[8] ?? '', // Column I
-                'thumbnail' => $rowData[9] ?? '' // Column J
-            ];
-            
-            // Download and save image if URL exists
-            if (!empty($entry['image_url'])) {
-                $imageUrl = $entry['image_url'];
-                $imageExt = pathinfo(parse_url($imageUrl, PHP_URL_PATH), PATHINFO_EXTENSION);
-                $imagePath = 'uploads/images/' . uniqid() . '.' . ($imageExt ?: 'jpg');
-                
-                if (!file_exists('uploads/images')) {
-                    mkdir('uploads/images', 0755, true);
-                }
-                
-                // Download and save the image
-                $imageContent = @file_get_contents($imageUrl);
-                if ($imageContent !== false) {
-                    file_put_contents($imagePath, $imageContent);
-                    $entry['image_path'] = $imagePath;
-                    
-                    // Create thumbnail
-                    $thumbnailPath = 'uploads/thumbs/' . basename($imagePath);
-                    if (!file_exists('uploads/thumbs')) {
-                        mkdir('uploads/thumbs', 0755, true);
-                    }
-                    createThumbnail($imagePath, $thumbnailPath, 300, 200);
-                    $entry['thumbnail_path'] = $thumbnailPath;
-                }
+        $highestRow = $worksheet->getHighestRow();
+        $highestColumn = $worksheet->getHighestColumn();
+        $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn);
+        
+        error_log("Excel file - Highest Row: $highestRow, Highest Column: $highestColumn");
+        
+        for ($row = 2; $row <= $highestRow; $row++) {
+            $rowData = [];
+            for ($col = 1; $col <= $highestColumnIndex; $col++) {
+                $cell = $worksheet->getCell(\PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex($col) . $row);
+                $value = $cell->getFormattedValue();
+                $rowData[] = $value !== null ? (string)$value : '';
             }
             
-            $data[] = $entry;
+            error_log("Row $row data: " . json_encode($rowData));
+            
+            if (!empty($rowData[0])) {
+                $entry = [
+                    'title' => $rowData[0] ?? '',
+                    'description' => $rowData[1] ?? '',
+                    'timestamp' => $rowData[2] ?? date('Y-m-d H:i:s'),
+                    'file_type' => $rowData[3] ?? 'xlsx',
+                    'original_filename' => $rowData[4] ?? '',
+                    'file_path' => $rowData[5] ?? '',
+                    'file_size' => $rowData[6] ?? 0,
+                    'image_url' => $rowData[8] ?? '',
+                    'thumbnail' => $rowData[9] ?? ''
+                ];
+                
+                if (!empty($entry['image_url'])) {
+                    $imageUrl = trim($entry['image_url']);
+                    error_log("Processing image URL: $imageUrl");
+                    if (filter_var($imageUrl, FILTER_VALIDATE_URL) && preg_match('/\.(jpg|jpeg|png|gif)$/i', $imageUrl)) {
+                        $imageExt = pathinfo(parse_url($imageUrl, PHP_URL_PATH), PATHINFO_EXTENSION);
+                        $imagePath = 'Uploads/images/' . uniqid() . '.' . ($imageExt ?: 'jpg');
+                        
+                        if (!file_exists('Uploads/images')) {
+                            mkdir('Uploads/images', 0755, true);
+                            error_log("Created directory: Uploads/images");
+                        }
+                        
+                        $context = stream_context_create([
+                            'http' => [
+                                'timeout' => 30, // Increased timeout
+                                'header' => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+                            ]
+                        ]);
+                        $imageContent = @file_get_contents($imageUrl, false, $context); // Suppress warnings
+                        if ($imageContent !== false) {
+                            if (file_put_contents($imagePath, $imageContent)) {
+                                $entry['image_path'] = $imagePath;
+                                $thumbnailPath = 'Uploads/thumbs/' . basename($imagePath);
+                                if (!file_exists('Uploads/thumbs')) {
+                                    mkdir('Uploads/thumbs', 0755, true);
+                                    error_log("Created directory: Uploads/thumbs");
+                                }
+                                if (createThumbnail($imagePath, $thumbnailPath, 300, 200)) {
+                                    $entry['thumbnail_path'] = $thumbnailPath;
+                                } else {
+                                    error_log("Thumbnail creation failed for: $imagePath");
+                                }
+                            } else {
+                                error_log("Failed to save image to: $imagePath");
+                            }
+                        } else {
+                            error_log("Failed to download image from: $imageUrl - Check allow_url_fopen or network");
+                        }
+                    } else {
+                        error_log("Invalid image URL: $imageUrl");
+                    }
+                }
+                
+                $data[] = $entry;
+            }
         }
+        
+        error_log("Extracted Excel data: " . json_encode($data));
+        return $data;
+    } catch (Exception $e) {
+        error_log("Excel processing error: " . $e->getMessage());
+        return [];
     }
-    
-    return $data;
 }
 
 // Helper function to extract text from different file types
@@ -97,7 +199,7 @@ function extractFileContent($filePath, $fileType) {
     $thumbnailPath = '';
     $excelData = [];
     
-    switch($fileType) {
+    switch ($fileType) {
         case 'txt':
         case 'md':
             $content = file_get_contents($filePath);
@@ -107,19 +209,21 @@ function extractFileContent($filePath, $fileType) {
             if (class_exists('PhpOffice\PhpWord\IOFactory')) {
                 $phpWord = \PhpOffice\PhpWord\IOFactory::load($filePath);
                 $content = '';
-                foreach($phpWord->getSections() as $section) {
-                    foreach($section->getElements() as $element) {
-                        if (method_exists($element, 'getElements')) {
-                            foreach($element->getElements() as $child) {
-                                if (method_exists($child, 'getText')) {
+                foreach ($phpWord->getSections() as $section) {
+                    foreach ($section->getElements() as $element) {
+                        if ($element instanceof \PhpOffice\PhpWord\Element\TextRun) {
+                            foreach ($element->getElements() as $child) {
+                                if ($child instanceof \PhpOffice\PhpWord\Element\Text) {
                                     $content .= $child->getText() . ' ';
                                 }
                             }
-                        } elseif (method_exists($element, 'getText')) {
+                        } elseif ($element instanceof \PhpOffice\PhpWord\Element\Text) {
                             $content .= $element->getText() . ' ';
                         }
                     }
                 }
+            } else {
+                error_log("PhpWord library not installed for DOCX processing");
             }
             break;
             
@@ -128,6 +232,8 @@ function extractFileContent($filePath, $fileType) {
                 $parser = new \Smalot\PdfParser\Parser();
                 $pdf = $parser->parseFile($filePath);
                 $content = $pdf->getText();
+            } else {
+                error_log("PdfParser library not installed for PDF processing");
             }
             break;
             
@@ -135,12 +241,24 @@ function extractFileContent($filePath, $fileType) {
         case 'xls':
             if (class_exists('PhpOffice\PhpSpreadsheet\IOFactory')) {
                 $excelData = extractExcelContent($filePath);
-                if (!empty($excelData[0])) {
+                if (!empty($excelData)) {
                     $firstRow = $excelData[0];
                     $content = $firstRow['description'] ?? '';
                     $imagePath = $firstRow['image_path'] ?? '';
                     $thumbnailPath = $firstRow['thumbnail_path'] ?? '';
                 }
+            } else {
+                error_log("PhpSpreadsheet library not installed for Excel processing");
+            }
+            break;
+            
+        case 'csv':
+            $excelData = extractCsvContent($filePath);
+            if (!empty($excelData)) {
+                $firstRow = $excelData[0];
+                $content = $firstRow['description'] ?? '';
+                $imagePath = $firstRow['image_path'] ?? '';
+                $thumbnailPath = $firstRow['thumbnail_path'] ?? '';
             }
             break;
     }
@@ -162,7 +280,6 @@ if (isset($_POST['delete_file'])) {
         $allBlogs = json_decode(file_get_contents($jsonFile), true) ?: [];
         
         if (isset($allBlogs[$index])) {
-            // Delete associated files
             $file = $allBlogs[$index];
             if (!empty($file['image'])) @unlink($file['image']);
             if (!empty($file['file_path'])) @unlink($file['file_path']);
@@ -175,8 +292,12 @@ if (isset($_POST['delete_file'])) {
             }
             
             array_splice($allBlogs, $index, 1);
-            file_put_contents($jsonFile, json_encode($allBlogs, JSON_PRETTY_PRINT));
-            $message = "✅ File deleted successfully!";
+            if (file_put_contents($jsonFile, json_encode($allBlogs, JSON_PRETTY_PRINT))) {
+                $message = "✅ File deleted successfully!";
+            } else {
+                $message = "❌ Failed to update blog data.";
+                error_log("Failed to update blog data: $jsonFile");
+            }
         }
     }
 }
@@ -184,113 +305,144 @@ if (isset($_POST['delete_file'])) {
 // Handle file upload
 if (isset($_POST['upload']) && isset($_FILES['file'])) {
     $file = $_FILES['file'];
-    $filename = $file['name'];
-    $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-    $fileSize = $file['size'];
-    $description = $_POST['description'] ?? '';
-    
-    // Create uploads directory if it doesn't exist
-    if (!file_exists('uploads')) {
-        mkdir('uploads', 0755, true);
-    }
-    
-    // Supported file types
-    $supportedTypes = ['txt', 'md', 'json', 'docx', 'pdf', 'jpg', 'jpeg', 'png', 'gif', 'xlsx', 'xls'];
-    
-    if (!in_array($ext, $supportedTypes)) {
-        $message = "❌ Unsupported file type.";
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        $message = "❌ File upload error: " . $file['error'];
+        error_log("File upload error: " . $file['error']);
     } else {
-        $title = pathinfo($filename, PATHINFO_FILENAME);
-        $uniqueId = uniqid();
-        $filePath = 'uploads/' . $uniqueId . '.' . $ext;
-        $content = '';
-        $imagePath = '';
-        $thumbnailPath = '';
-        $excelData = [];
+        $filename = $file['name'];
+        $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+        $fileSize = $file['size'];
+        $description = trim($_POST['description'] ?? '');
         
-        // Move uploaded file
-        move_uploaded_file($file['tmp_name'], $filePath);
+        $supportedTypes = ['txt', 'md', 'json', 'docx', 'pdf', 'jpg', 'jpeg', 'png', 'gif', 'xlsx', 'xls', 'csv'];
         
-        // Handle image uploads
-        if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
-            $imagePath = $filePath;
-            // Create thumbnail for images
-            $thumbnailPath = 'uploads/thumbs/' . $uniqueId . '_thumb.' . $ext;
-            if (!file_exists('uploads/thumbs')) {
-                mkdir('uploads/thumbs', 0755, true);
-            }
-            createThumbnail($filePath, $thumbnailPath, 300, 200);
+        if (!in_array($ext, $supportedTypes)) {
+            $message = "❌ Unsupported file type: $ext";
+            error_log("Unsupported file type: $ext");
         } else {
-            // Extract content from non-image files
-            $extracted = extractFileContent($filePath, $ext);
-            $content = $extracted['content'];
-            $imagePath = $extracted['image_path'];
-            $thumbnailPath = $extracted['thumbnail_path'];
-            $excelData = $extracted['excel_data'];
+            $title = pathinfo($filename, PATHINFO_FILENAME);
+            $uniqueId = uniqid();
+            $filePath = 'Uploads/' . $uniqueId . '.' . $ext;
             
-            // For Excel files, use first row data if description is empty
-            if (($ext === 'xlsx' || $ext === 'xls') && empty($description) && !empty($excelData[0]['description'])) {
-                $description = $excelData[0]['description'];
+            if (!file_exists('Uploads')) {
+                mkdir('Uploads', 0755, true);
+                error_log("Created directory: Uploads");
+            }
+            
+            if (!move_uploaded_file($file['tmp_name'], $filePath)) {
+                $message = "❌ Failed to move uploaded file.";
+                error_log("Failed to move uploaded file: $filePath");
+            } else {
+                $extracted = extractFileContent($filePath, $ext);
+                $content = $extracted['content'];
+                $imagePath = $extracted['image_path'];
+                $thumbnailPath = $extracted['thumbnail_path'];
+                $excelData = $extracted['excel_data'];
+                
+                error_log("Extracted file content: " . json_encode($extracted));
+                
+                if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+                    $imagePath = $filePath;
+                    $thumbnailPath = 'Uploads/thumbs/' . $uniqueId . '_thumb.' . $ext;
+                    if (!file_exists('Uploads/thumbs')) {
+                        mkdir('Uploads/thumbs', 0755, true);
+                        error_log("Created directory: Uploads/thumbs");
+                    }
+                    if (createThumbnail($filePath, $thumbnailPath, 300, 200)) {
+                        $thumbnailPath = "uploads/thumbnails/" . basename($_FILES['thumbnail']['name']);
+
+                    } else {
+                        error_log("Failed to create thumbnail for: $filePath");
+                        $thumbnailPath = '';
+                    }
+                }
+                
+                $description = !empty($description) ? $description : ($content ?: 'No description available');
+                if (in_array($ext, ['xlsx', 'xls', 'csv']) && empty($description) && !empty($excelData) && !empty($excelData[0]['description'])) {
+                    $description = $excelData[0]['description'];
+                    error_log("Using Excel/CSV description: $description");
+                }
+                
+                if (in_array($ext, ['xlsx', 'xls', 'csv']) && !empty($excelData) && !empty($excelData[0]['image_path'])) {
+                    $imagePath = $excelData[0]['image_path'];
+                    $thumbnailPath = $excelData[0]['thumbnail_path'];
+                    error_log("Using Excel/CSV image paths: image=$imagePath, thumbnail=$thumbnailPath");
+                }
+                
+                $blog = [
+                    'title' => $title,
+                    'description' => $description,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'file_type' => $ext,
+                    'original_filename' => $filename,
+                    'file_path' => $filePath,
+                    'file_size' => $fileSize,
+                    'image' => $imagePath,
+                    'thumbnail' => $thumbnailPath,
+                    'excel_data' => $excelData
+                ];
+                
+                error_log("Blog entry: " . json_encode($blog));
+                
+                $jsonFile = 'blog_data.json';
+                $allBlogs = file_exists($jsonFile) 
+                    ? (json_decode(file_get_contents($jsonFile), true) ?: []) 
+                    : [];
+                array_unshift($allBlogs, $blog);
+                if (!file_put_contents($jsonFile, json_encode($allBlogs, JSON_PRETTY_PRINT))) {
+                    $message = "❌ Failed to save blog data.";
+                    error_log("Failed to save blog data to: $jsonFile");
+                } else {
+                    $message = "✅ File uploaded successfully!";
+                    echo '<script>
+                        setTimeout(function() {
+                            var msg = document.querySelector(".message");
+                            if (msg) msg.style.display = "none";
+                        }, 3000);
+                    </script>';
+                }
             }
         }
-        
-        $blog = [
-            "title" => $title,
-            "description" => !empty($description) ? $description : $content,
-            "timestamp" => date('Y-m-d H:i:s'),
-            "file_type" => $ext,
-            "original_filename" => $filename,
-            "file_path" => $filePath,
-            "file_size" => $fileSize,
-            "image" => $imagePath,
-            "thumbnail" => $thumbnailPath,
-            "excel_data" => $excelData
-        ];
-        
-        $jsonFile = 'blog_data.json';
-        $allBlogs = [];
-        
-        if (file_exists($jsonFile)) {
-            $allBlogs = json_decode(file_get_contents($jsonFile), true);
-            if (!is_array($allBlogs)) $allBlogs = [];
-        }
-        
-        array_unshift($allBlogs, $blog);
-        file_put_contents($jsonFile, json_encode($allBlogs, JSON_PRETTY_PRINT));
-        $message = "✅ File uploaded successfully!";
-        
-        // Clear the message after 3 seconds
-        echo '<script>
-            setTimeout(function() {
-                var msg = document.querySelector(".message");
-                if (msg) msg.style.display = "none";
-            }, 3000);
-        </script>';
     }
 }
 
 // Helper function to create thumbnails
 function createThumbnail($src, $dest, $targetWidth, $targetHeight) {
-    $type = exif_imagetype($src);
+    if (!extension_loaded('gd')) {
+        error_log("GD library not enabled for thumbnail creation");
+        return false;
+    }
     
-    switch ($type) {
-        case IMAGETYPE_JPEG:
-            $image = imagecreatefromjpeg($src);
+    $imageInfo = @getimagesize($src); // Suppress warnings
+    if ($imageInfo === false) {
+        error_log("Failed to determine image type for: $src");
+        return false;
+    }
+    
+    $mime = $imageInfo['mime'];
+    switch ($mime) {
+        case 'image/jpeg':
+            $image = @imagecreatefromjpeg($src); // Suppress warnings
             break;
-        case IMAGETYPE_PNG:
-            $image = imagecreatefrompng($src);
+        case 'image/png':
+            $image = @imagecreatefrompng($src); // Suppress warnings
             break;
-        case IMAGETYPE_GIF:
-            $image = imagecreatefromgif($src);
+        case 'image/gif':
+            $image = @imagecreatefromgif($src); // Suppress warnings
             break;
         default:
+            error_log("Unsupported image MIME type: $mime");
             return false;
+    }
+    
+    if (!$image) {
+        error_log("Failed to create image from: $src");
+        return false;
     }
     
     $width = imagesx($image);
     $height = imagesy($image);
     
-    // Calculate aspect ratio
     $srcRatio = $width / $height;
     $destRatio = $targetWidth / $targetHeight;
     
@@ -304,8 +456,7 @@ function createThumbnail($src, $dest, $targetWidth, $targetHeight) {
     
     $thumb = imagecreatetruecolor($newWidth, $newHeight);
     
-    // Preserve transparency for PNG/GIF
-    if ($type == IMAGETYPE_PNG || $type == IMAGETYPE_GIF) {
+    if ($mime === 'image/png' || $mime === 'image/gif') {
         imagecolortransparent($thumb, imagecolorallocatealpha($thumb, 0, 0, 0, 127));
         imagealphablending($thumb, false);
         imagesavealpha($thumb, true);
@@ -313,14 +464,14 @@ function createThumbnail($src, $dest, $targetWidth, $targetHeight) {
     
     imagecopyresampled($thumb, $image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
     
-    switch ($type) {
-        case IMAGETYPE_JPEG:
+    switch ($mime) {
+        case 'image/jpeg':
             imagejpeg($thumb, $dest, 85);
             break;
-        case IMAGETYPE_PNG:
+        case 'image/png':
             imagepng($thumb, $dest, 8);
             break;
-        case IMAGETYPE_GIF:
+        case 'image/gif':
             imagegif($thumb, $dest);
             break;
     }
@@ -328,7 +479,7 @@ function createThumbnail($src, $dest, $targetWidth, $targetHeight) {
     imagedestroy($image);
     imagedestroy($thumb);
     
-    return true;
+    return file_exists($dest);
 }
 
 // Read existing files for display
@@ -651,7 +802,7 @@ if (file_exists('blog_data.json')) {
     <div class="upload-container">
         <h2>📁 Upload a File</h2>
         <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" required accept=".txt,.md,.json,.docx,.pdf,.jpg,.jpeg,.png,.gif,.xlsx,.xls" />
+            <input type="file" name="file" required accept=".txt,.md,.json,.docx,.pdf,.jpg,.jpeg,.png,.gif,.xlsx,.xls,.csv" />
             <textarea name="description" placeholder="File description (optional)"></textarea>
             <input type="submit" name="upload" value="Upload">
         </form>
@@ -674,47 +825,47 @@ if (file_exists('blog_data.json')) {
                     <div class="file-item">
                         <div class="file-actions">
                             <form method="POST" style="display: inline;">
-                                <input type="hidden" name="file_index" value="<?= $index ?>">
+                                <input type="hidden" name="file_index" value="<?php echo $index; ?>">
                                 <button type="submit" name="delete_file" class="delete-btn" title="Delete">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
                         </div>
                         <h3>
-                            <a href="<?= htmlspecialchars($blog['file_path'] ?? '#') ?>" target="_blank">
-                                <?= htmlspecialchars($blog['title'] ?? 'Untitled') ?>
+                            <a href="<?php echo htmlspecialchars($blog['file_path'] ?? '#'); ?>" target="_blank">
+                                <?php echo htmlspecialchars($blog['title'] ?? 'Untitled'); ?>
                             </a>
                         </h3>
                         
-                        <?php if (!empty($blog['thumbnail'])): ?>
-                            <img src="<?= htmlspecialchars($blog['thumbnail']) ?>" alt="Thumbnail" class="file-preview-image">
-                        <?php elseif (!empty($blog['image'])): ?>
-                            <img src="<?= htmlspecialchars($blog['image']) ?>" alt="Image" class="file-preview-image">
+                        <?php if (!empty($blog['thumbnail']) && file_exists($blog['thumbnail'])): ?>
+                            <img src="<?php echo htmlspecialchars('/' . $blog['thumbnail']); ?>" alt="Thumbnail" class="file-preview-image">
+                        <?php elseif (!empty($blog['image']) && file_exists($blog['image'])): ?>
+                            <img src="<?php echo htmlspecialchars('/' . $blog['image']); ?>" alt="Image" class="file-preview-image">
                         <?php endif; ?>
                         
-                        <p><strong>Description:</strong> <?= htmlspecialchars($blog['description'] ?? 'No description') ?></p>
-                        <p><strong>Type:</strong> <?= strtoupper($blog['file_type'] ?? 'UNKNOWN') ?></p>
+                        <p><strong>Description:</strong> <?php echo htmlspecialchars($blog['description'] ?? 'No description available'); ?></p>
+                        <p><strong>Type:</strong> <?php echo strtoupper($blog['file_type'] ?? 'UNKNOWN'); ?></p>
                         <p><strong>Size:</strong> 
                             <?php 
                                 if (isset($blog['file_size'])) {
                                     $size = $blog['file_size'];
                                     if ($size < 1024) {
-                                        echo $size . ' bytes';
+                                        echo "$size bytes";
                                     } elseif ($size < 1048576) {
-                                        echo round($size/1024, 2) . ' KB';
+                                        echo round($size/1024, 2) . " KB";
                                     } else {
-                                        echo round($size/1048576, 2) . ' MB';
+                                        echo round($size/1048576, 2) . " MB";
                                     }
                                 } else {
                                     echo 'N/A';
                                 }
                             ?>
                         </p>
-                        <p><strong>Uploaded:</strong> <?= isset($blog['timestamp']) ? date('M d, Y H:i', strtotime($blog['timestamp'])) : 'Unknown' ?></p>
+                        <p><strong>Uploaded:</strong> <?php echo isset($blog['timestamp']) ? date('M d, Y H:i', strtotime($blog['timestamp'])) : 'Unknown'; ?></p>
                         
                         <?php if (!empty($blog['excel_data'])): ?>
                             <div class="excel-preview">
-                                <h4>Excel Data:</h4>
+                                <h4>Excel/CSV Data:</h4>
                                 <table class="excel-table">
                                     <thead>
                                         <tr>
@@ -726,11 +877,13 @@ if (file_exists('blog_data.json')) {
                                     <tbody>
                                         <?php foreach ($blog['excel_data'] as $row): ?>
                                             <tr>
-                                                <td><?= htmlspecialchars($row['title'] ?? '') ?></td>
-                                                <td><?= htmlspecialchars($row['description'] ?? '') ?></td>
+                                                <td><?php echo htmlspecialchars($row['title'] ?? ''); ?></td>
+                                                <td><?php echo htmlspecialchars($row['description'] ?? ''); ?></td>
                                                 <td>
-                                                    <?php if (!empty($row['image_path'])): ?>
-                                                        <img src="<?= htmlspecialchars($row['image_path']) ?>" style="max-width: 100px;">
+                                                    <?php if (!empty($row['image_path']) && file_exists($row['image_path'])): ?>
+                                                        <img src="<?php echo htmlspecialchars('/' . $row['image_path']); ?>" style="max-width: 100px;">
+                                                    <?php elseif (!empty($row['image_url'])): ?>
+                                                        <p>URL: <?php echo htmlspecialchars($row['image_url']); ?></p>
                                                     <?php endif; ?>
                                                 </td>
                                             </tr>
